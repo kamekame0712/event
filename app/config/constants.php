@@ -90,7 +90,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 |--------------------------------------------------------------------------
 */
 // サイトタイトル
-const SITE_NAME				= '新年度展示会';
+const SITE_NAME				= '中央教育研究所-セミナー&amp;展示会';
 
 // CSSやJSの変更を正しく反映させるためキャッシュをクリアする必要があるときに変更
 const CACHES_CLEAR_VERSION	= '20201127_1';

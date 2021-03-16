@@ -1,14 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Index extends MY_Controller
+class Errors extends MY_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	public function index()
+	public function error_404()
 	{
-		$this->load->view('front/index');
+		$this->output->set_status_header('404');
+		$this->load->view('errors/error_404');
 	}
 }

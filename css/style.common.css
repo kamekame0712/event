@@ -18,6 +18,13 @@ body {
 	color: #222222;
 }
 
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 230px;
+    box-sizing: border-box;
+}
+
 img {
     width: 100%;
 }
@@ -45,6 +52,72 @@ img {
     }
 }
 /* #endregion 全体 */
+
+/* #region フッター */
+footer {
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 20px 0;
+    border-top: 1px solid #991E23;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer img.logo {
+    max-width: 160px;
+}
+
+footer .copyright {
+    text-align: right;
+    margin: 20px 0 0;
+}
+/* #endregion フッター */
+
+/* #region エラーページ */
+.error-header {
+    border-top: 5px solid #F08C27;
+    margin-bottom: 30px;
+}
+
+.error-header h1.error-title {
+    font-size: 10.0rem;
+    line-height: 7.0rem;
+    font-weight: bold;
+    text-align: center;
+    color: #F08C27;
+    margin: 30px auto 0;
+}
+
+.error-header p.error-lead {
+    font-size: 4.0rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-comment {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width : 768px) {
+    .error-header h1.error-title {
+        font-size: 8.0rem;
+    }
+
+    .error-header p.error-lead {
+        font-size: 3.0rem;
+    }
+
+    .error-comment {
+        margin-bottom: 20px;
+    }
+}
+/* #endregion エラーページ */
 
 /* #region メインページ */
 .top-banner {
@@ -341,26 +414,6 @@ h3.place-divide span {
     width: 100%;
     min-height: 200px;
     border: 1px solid #991E23;
-}
-
-footer {
-    margin: 30px 0 0;
-    padding: 20px 0;
-    border-top: 1px solid #991E23;
-    font-size: 1.3rem;
-}
-
-footer a {
-    display: inline-block;
-}
-
-footer img.logo {
-    max-width: 160px;
-}
-
-footer .copyright {
-    text-align: right;
-    margin: 20px 0 0;
 }
 
 @media screen and (max-width : 768px) {
