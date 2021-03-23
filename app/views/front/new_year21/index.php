@@ -1,4 +1,4 @@
-<?php $this->load->view('inc/_head', array('TITLE' => SITE_NAME)); ?>
+<?php $this->load->view('inc/_head', array('TITLE' => SITE_NAME, 'CSS' => 'style.new_year21.css')); ?>
 
 <body>
 	<div class="wrapper">
@@ -588,7 +588,7 @@
 			</div> <!-- end of .row -->
 		</div> <!-- end of container -->
 
-		<?php $this->load->view('inc/footer'); ?>
+		<?php $this->load->view('front/new_year21/footer'); ?>
 	</div> <!-- end of .wrapper -->
 
 	<?php $this->load->view('inc/_foot'); ?>

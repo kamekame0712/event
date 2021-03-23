@@ -9,6 +9,6 @@ class Index extends MY_Controller
 
 	public function index()
 	{
-		$this->load->view('front/index');
+		$this->load->view('front/new_year21/index');
 	}
 }
