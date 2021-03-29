@@ -178,9 +178,11 @@ class Exhibition extends MY_Controller
 			$exhibition_summer21_id = $this->m_exhibition->insert($insert_data_exhibition);
 
 			if( !empty($detail) ) {
+				$sn = 1;
 				foreach( $detail as $val ) {
 					$insert_data_detail = array(
 						'exhibition_summer21_id'	=> $exhibition_summer21_id,
+						'serial_number'				=> $sn++,
 						'exhibition_time_start'		=> $val['start'],
 						'exhibition_time_end'		=> $val['end'],
 						'capacity'		=> $val['capacity'],
@@ -217,9 +219,11 @@ class Exhibition extends MY_Controller
 				$this->m_exhibition->update(array('exhibition_summer21_id' => $exhibition_id), $update_data_exhibition);
 
 				if( !empty($detail) ) {
+					$sn = 1;
 					foreach( $detail as $val ) {
 						$insert_data_detail = array(
 							'exhibition_summer21_id'	=> $exhibition_id,
+							'serial_number'				=> $sn++,
 							'exhibition_time_start'		=> $val['start'],
 							'exhibition_time_end'		=> $val['end'],
 							'capacity'		=> $val['capacity'],
@@ -253,7 +257,7 @@ class Exhibition extends MY_Controller
 			return;
 		}
 
-		$apply_exhibition_data = $this->m_apply_exhibition->get_list(array('exhibition_summer21_id' => $exhibition_id));
+		$apply_exhibition_data = $this->m_apply_exhibition->get_list_for_dl($exhibition_id);
 
 		// タイムアウトさせない
 		set_time_limit(0);
@@ -262,35 +266,33 @@ class Exhibition extends MY_Controller
 		stream_filter_append($fp, 'convert.iconv.UTF-8/CP932//TRANSLIT', STREAM_FILTER_WRITE);
 
 		header("Content-Type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=" . 'product' . date('YmdHis') . '.csv');
+		header("Content-Disposition: attachment; filename=" . 'exhibition' . date('YmdHis') . '.csv');
 
 		if( empty($apply_exhibition_data) ) {
 			fputs($fp, 'no data');
 		}
 		else {
 			$csv_array = array(
+				'開催時間',
 				'塾名',
-				'参加者1',
-				'参加者2',
+				'人数',
 				'郵便番号',
 				'住所',
 				'電話番号',
 				'メールアドレス',
-				'展示会（1:参加 2:不参加）',
 				'申込日時'
 			);
 			fputcsv($fp, $csv_array);
 
 			foreach( $apply_exhibition_data as $val ) {
 				$csv_array = array(
+					date('H:i', strtotime($val['exhibition_time_start'])) . '～' . date('H:i', strtotime($val['exhibition_time_end'])),
 					$val['juku_name'],
-					$val['guest_name1'],
-					$val['guest_name2'],
+					$val['guest_num'],
 					$val['zip'],
 					$val['address'],
 					$val['tel'],
 					$val['email'],
-					$val['attend_exhibition'],
 					$val['regist_time']
 				);
 				fputcsv($fp, $csv_array);

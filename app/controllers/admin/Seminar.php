@@ -47,7 +47,7 @@ class Seminar extends MY_Controller
 		stream_filter_append($fp, 'convert.iconv.UTF-8/CP932//TRANSLIT', STREAM_FILTER_WRITE);
 
 		header("Content-Type: application/octet-stream");
-		header("Content-Disposition: attachment; filename=" . 'product' . date('YmdHis') . '.csv');
+		header("Content-Disposition: attachment; filename=" . 'seminar' . date('YmdHis') . '.csv');
 
 		if( empty($apply_seminar_data) ) {
 			fputs($fp, 'no data');

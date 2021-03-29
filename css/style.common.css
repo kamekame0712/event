@@ -28,11 +28,19 @@ img {
 }
 
 .for-pc {
-    display: block;
+    display: block !important;
 }
 
 .for-sp {
-    display: none;
+    display: none !important;
+}
+
+.for-pc-ib {
+    display: inline-block !important;
+}
+
+.for-sp-ib {
+    display: none !important;
 }
 
 @media screen and (max-width : 768px) {
@@ -41,11 +49,19 @@ img {
     }
 
     .for-pc {
-        display: none;
+        display: none !important;
     }
 
     .for-sp {
-        display: block;
+        display: block !important;
+    }
+
+    .for-pc-ib {
+        display: none !important;
+    }
+
+    .for-sp-ib {
+        display: inline-block !important;
     }
 }
 /* #endregion 全体 */

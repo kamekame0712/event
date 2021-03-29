@@ -8,7 +8,7 @@ jQuery( function($) {
 		url: SITE_URL + 'admin/exhibition/get_bootgrid',
 		formatters: {
 			'col_proc': function(column, row) {
-				return '<a href="' + SITE_URL + 'admin/exhibition/mod/' + row.exhibition_id + '">'
+				return '<a href="javascript:void(0);" onclick="mod_exhibition(' + row.exhibition_id + ')">'
 					 + '<i class="fas fa-pencil-alt"></i>&nbsp;修正</a>&nbsp;&nbsp;&nbsp;'
 					 + '<a href="javascript:void(0);" onclick="del_exhibition(' + row.exhibition_id + ',\'' + row.office_id + '\',\'' + row.place_id + '\',\'' + row.event_date_data + '\')">'
 					 + '<i class="far fa-trash-alt"></i>&nbsp;削除</a>&nbsp;&nbsp;&nbsp;'
@@ -40,6 +40,34 @@ jQuery( function($) {
 $('#event_date').datepicker({
 	dateFormat: 'yy-mm-dd'
 });
+
+function mod_exhibition(exhibition_id)
+{
+	var flg_submit = true;
+
+	$.ajax({
+		url: SITE_URL + 'admin/exhibition/ajax_chk_applied',
+		type:'post',
+		cache:false,
+		data: {
+			exhibition_id: exhibition_id
+		}
+	})
+	.done( function(ret, textStatus, jqXHR) {
+		if( ret['flg_exists'] ) {
+			if( !confirm('申込データが存在します。本当に修正しますか？' + "\r\n" + '（申込データは削除されます。）') ) {
+				flg_submit = false;
+			}
+		}
+
+		if( flg_submit ) {
+			location.href = SITE_URL + 'admin/exhibition/mod/' + exhibition_id;
+		}
+	})
+	.fail( function(data, textStatus, errorThrown) {
+		show_error_notification(textStatus);
+	});
+}
 
 function del_exhibition(exhibition_id, office_id, place_id, event_date)
 {

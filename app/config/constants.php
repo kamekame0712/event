@@ -97,3 +97,6 @@ const CACHES_CLEAR_VERSION	= '20201127_1';
 
 // 展示会の開催時間の区切り数
 const EXHIBITION_PERIOD_NUM = 6;
+
+// pdfフォルダへのパス
+const PDF_FOLDER			= 'C:/product/event/pdf/';

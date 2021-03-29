@@ -60,6 +60,7 @@ CREATE TABLE `t_exhibition_summer21` (
 CREATE TABLE `t_exhibition_detail_summer21` (
   `exhibition_detail_summer21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `exhibition_summer21_id` int(7) NOT NULL COMMENT 't_exhibition_summer21のID',
+  `serial_number` int(2) DEFAULT 1 COMMENT '時間順の連番',
   `exhibition_time_start` time NOT NULL COMMENT '来場開始時間',
   `exhibition_time_end` time NOT NULL COMMENT '来場終了時間',
   `capacity` int(3) NOT NULL COMMENT '座席数',

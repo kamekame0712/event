@@ -60,6 +60,63 @@ $config = array(
 		),
 
 		array(
+			'field' => 'time',
+			'label' => '夏期テキスト展示のご希望時間帯',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'juku_name',
+			'label' => '貴塾名',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'zip',
+			'label' => '郵便番号',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'address',
+			'label' => 'ご住所',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'tel',
+			'label' => '電話番号',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'email',
+			'label' => 'メールアドレス',
+			'rules' => 'required'
+		)
+	),
+
+	// テキスト展示参加申込フォーム
+	'apply_exhibition' => array(
+		array(
+			'field' => 'place',
+			'label' => '会場（日程）',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'time',
+			'label' => 'ご希望時間帯',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'guest_num',
+			'label' => 'ご来場人数',
+			'rules' => 'required'
+		),
+
+		array(
 			'field' => 'juku_name',
 			'label' => '貴塾名',
 			'rules' => 'required'

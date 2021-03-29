@@ -24,45 +24,69 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place7',
-									'value'	=> '7',
-									'checked'	=> set_checkbox('place', '7', FALSE)
-								)); ?>
-								<?php echo form_label('大阪会場［６月１日（火）］', 'place7', array('class' => 'for-radio place-label')); ?>
+								<?php if( $REMAIN_SEMINAR['7'] > 0 ): ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place7',
+										'value'	=> '7',
+										'checked'	=> set_checkbox('place', '7', FALSE)
+									)); ?>
+									<?php echo form_label('大阪会場［６月１日（火）］', 'place7', array('class' => 'for-radio place-label')); ?>
+								<?php else: ?>
+									<p class="full-capacity">大阪会場［６月１日（火）］</p>
+									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php endif; ?>
 							</div>
 
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place8',
-									'value'	=> '8',
-									'checked'	=> set_checkbox('place', '8', FALSE)
-								)); ?>
-								<?php echo form_label('京都会場［６月２日（水）］', 'place8', array('class' => 'for-radio place-label')); ?>
+								<?php if( $REMAIN_SEMINAR['8'] > 0 ): ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place8',
+										'value'	=> '8',
+										'checked'	=> set_checkbox('place', '8', FALSE)
+									)); ?>
+									<?php echo form_label('京都会場［６月２日（水）］', 'place8', array('class' => 'for-radio place-label')); ?>
+								<?php else: ?>
+									<p class="full-capacity">京都会場［６月２日（水）］</p>
+									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->
 
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place9',
-									'value'	=> '9',
-									'checked'	=> set_checkbox('place', '9', FALSE)
-								)); ?>
-								<?php echo form_label('神戸会場［６月３日（木）］', 'place9', array('class' => 'for-radio place-label')); ?>
+								<?php if( $REMAIN_SEMINAR['9'] > 0 ): ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place9',
+										'value'	=> '9',
+										'checked'	=> set_checkbox('place', '9', FALSE)
+									)); ?>
+									<?php echo form_label('神戸会場［６月３日（木）］', 'place9', array('class' => 'for-radio place-label')); ?>
+								<?php else: ?>
+									<p class="full-capacity">神戸会場［６月３日（木）］</p>
+									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php endif; ?>
 							</div>
 
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place10',
-									'value'	=> '10',
-									'checked'	=> set_checkbox('place', '10', FALSE)
-								)); ?>
-								<?php echo form_label('姫路会場［６月４日（金）］', 'place10', array('class' => 'for-radio place-label')); ?>
+								<?php if( $REMAIN_SEMINAR['10'] > 0 ): ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place10',
+										'value'	=> '10',
+										'checked'	=> set_checkbox('place', '10', FALSE)
+									)); ?>
+									<?php echo form_label('姫路会場［６月４日（金）］', 'place10', array('class' => 'for-radio place-label')); ?>
+								<?php else: ?>
+									<p class="full-capacity">姫路会場［６月４日（金）］</p>
+									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->
 
@@ -111,69 +135,57 @@
 
 						<p class="item-title mt-4">セミナー前後に夏期テキストをご覧になりたい場合は、ご希望の時間帯をお選びください</p>
 						<div class="container-fluid">
-							<div class="row" id="time_ok" style="display:none;">
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_ok',
-										'id'	=> 'time_ok_0',
-										'value'	=> 'ok_0',
-										'checked'	=> set_checkbox('time_ok', 'ok_0', TRUE)
-									)); ?>
-									<?php echo form_label('希望しない', 'time_ok_0', array('class' => 'for-radio place-label')); ?>
-								</div>
+							<?php if( !empty($REMAIN_EXHIBITION) ): ?>
+								<?php foreach( $REMAIN_EXHIBITION as $place => $exhibition ): ?>
+									<div class="row" id="select_time_<?= $place ?>" style="display:none;">
+										<div class="col-12 col-md-4">
+											<?php echo form_radio(array(
+												'name'	=> 'time',
+												'id'	=> 'time_no_' . $place,
+												'value'	=> '0_' . $place,
+												'checked'	=> set_checkbox('time', '0_' . $place, FALSE)
+											)); ?>
+											<?php echo form_label('希望しない', 'time_no_' . $place, array('class' => 'for-radio place-label')); ?>
+										</div>
 
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_ok',
-										'id'	=> 'time_ok_1',
-										'value'	=> 'ok_1',
-										'checked'	=> set_checkbox('time_ok', 'ok_1', FALSE)
-									)); ?>
-									<?php echo form_label('10:00～10:40', 'time_ok_1', array('class' => 'for-radio place-label')); ?>
-								</div>
+										<div class="col-12 col-md-4">
+											<?php if( $exhibition[1]['remain'] > 0 ): ?>
+												<?php echo form_radio(array(
+													'name'	=> 'time',
+													'id'	=> 'time_' . $exhibition[1]['detail_id'],
+													'value'	=> $exhibition[1]['detail_id'],
+													'checked'	=> set_checkbox('time', $exhibition[1]['detail_id'], FALSE)
+												)); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[1]['start'])) . '～' . date('H:i', strtotime($exhibition[1]['end'])), 'time_' . $exhibition[1]['detail_id'], array('class' => 'for-radio place-label')); ?>
+											<?php else: ?>
+												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[1]['start'])) ?>～<?= date('H:i', strtotime($exhibition[1]['end'])) ?></p>
+												<span class="full-capacity-info">※満員</span>
+											<?php endif; ?>
+										</div>
 
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_ok',
-										'id'	=> 'time_ok_2',
-										'value'	=> 'ok_2',
-										'checked'	=> set_checkbox('time_ok', 'ok_2', FALSE)
-									)); ?>
-									<?php echo form_label('12:40～13:20', 'time_ok_2', array('class' => 'for-radio place-label')); ?>
-								</div>
-							</div> <!-- end of .row -->
+										<div class="col-12 col-md-4">
+											<?php if( $exhibition[2]['remain'] > 0 ): ?>
+												<?php echo form_radio(array(
+													'name'	=> 'time',
+													'id'	=> 'time_' . $exhibition[2]['detail_id'],
+													'value'	=> $exhibition[2]['detail_id'],
+													'checked'	=> set_checkbox('time', $exhibition[2]['detail_id'], FALSE)
+												)); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[2]['start'])) . '～' . date('H:i', strtotime($exhibition[2]['end'])), 'time_' . $exhibition[2]['detail_id'], array('class' => 'for-radio place-label')); ?>
+											<?php else: ?>
+												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[2]['start'])) ?>～<?= date('H:i', strtotime($exhibition[2]['end'])) ?></p>
+												<span class="full-capacity-info">※満員</span>
+											<?php endif; ?>
+										</div>
+									</div> <!-- end of .row -->
+								<?php endforeach; ?>
+								<?php echo form_error('time'); ?>
 
-							<div class="row" id="time_kh" style="display:none;">
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_kh',
-										'id'	=> 'time_kh_0',
-										'value'	=> 'kh_0',
-										'checked'	=> set_checkbox('time_kh', 'kh_0', TRUE)
-									)); ?>
-									<?php echo form_label('希望しない', 'time_kh_0', array('class' => 'for-radio place-label')); ?>
-								</div>
-
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_kh',
-										'id'	=> 'time_kh_1',
-										'value'	=> 'kh_1',
-										'checked'	=> set_checkbox('time_kh', 'kh_1', FALSE)
-									)); ?>
-									<?php echo form_label('10:00～10:40', 'time_kh_1', array('class' => 'for-radio place-label')); ?>
-								</div>
-
-								<div class="col-12 col-md-4">
-									<?php echo form_radio(array(
-										'name'	=> 'time_kh',
-										'id'	=> 'time_kh_2',
-										'value'	=> 'kh_2',
-										'checked'	=> set_checkbox('time_kh', 'kh_2', FALSE)
-									)); ?>
-									<?php echo form_label('12:50～13:30', 'time_kh_2', array('class' => 'for-radio place-label')); ?>
-								</div>
-							</div> <!-- end of .row -->
+								<p class="note-limit">
+									※新型コロナウイルス感染予防対策として、展示会場内に密が発生することを避けるために時間帯ごとに人数制限を設けております。
+									夏期テキストをご覧になりたい場合は、ご希望の時間帯をお知らせください。
+								</p>
+							<?php endif; ?>
 						</div> <!-- end of .container-fluid -->
 
 						<h1 class="title mt-5 mb-4">お客様情報をご入力ください（※全て必須項目）</h1>
@@ -277,6 +289,6 @@
 	<?php $this->load->view('inc/_foot'); ?>
 
 	<script src="//ajaxzip3.github.io/ajaxzip3.js"></script>
-	<script src="<?= base_url('js/front/summer21_kansai.js') ?>?var=<?= CACHES_CLEAR_VERSION ?>"></script>
+	<script src="<?= base_url('js/front/summer21_seminar_kansai.js') ?>?var=<?= CACHES_CLEAR_VERSION ?>"></script>
 </body>
 </html>

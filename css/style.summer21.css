@@ -141,6 +141,14 @@ input[type="radio"]:checked + .for-radio::after {
     background-color: #EA3322;
     color: #FFFFFF;
     font-weight: bold;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.btn-enabled:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 .btn-disabled {
@@ -150,11 +158,37 @@ input[type="radio"]:checked + .for-radio::after {
     cursor: not-allowed !important;
 }
 
+.btn-back {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
 
+.btn-back:hover {
+    opacity: 0.8;
+}
 
+.arrow-triangle-right {
+    display: block;
+    position: relative;
+    width: 60px;
+}
 
-
-
+.arrow-triangle-right::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 30px solid #EA3322;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @media screen and (max-width : 768px) {
     .go-to-top {
@@ -205,11 +239,13 @@ header::after {
     background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(206, 225, 224, 1) 4px, rgba(206, 225, 224, 1) 8px );
 }
 
-
-
-
-
-
+header img {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin-top: -30px;
+    z-index: 10;
+}
 /* #endregion ヘッダー */
 
 /* #region フッター */
@@ -263,6 +299,26 @@ footer .copyright {
 /* #endregion フッター */
 
 /* #region メインページ */
+.area-box {
+    text-align: center;
+    font-weight: bold;
+}
+
+.area-box span {
+    display: inline-block;
+    background-color: #FFF24A;
+    padding: 3px 10px;
+    margin: 0 0 20px;
+}
+
+
+
+
+
+
+
+
+
 
 /* #endregion メインページ */
 
@@ -343,7 +399,7 @@ ul.breadcrumb-list .current::before {
 .form-box {
     border: 2px solid #FFF24A;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
     border-radius: 6px;
 }
 
@@ -368,6 +424,25 @@ ul.breadcrumb-list .current::before {
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
+}
+
+.form-box .full-capacity {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 5px;
+    font-size: 2.0rem;
+    text-decoration: line-through;
+}
+
+.form-box .full-capacity-info {
+    text-decoration: none;
+    color: #EA3322;
+}
+
+.form-box .note-limit {
+    margin: 20px 5em;
+    padding-left: 1em;
+    text-indent: -1em;
 }
 
 .form-box .place-label {
@@ -431,11 +506,11 @@ ul.breadcrumb-list .current::before {
 
 .form-box dl.item-box dt {
     float: left;
-    width: 150px;
+    width: 160px;
 }
 
 .form-box dl.item-box dd {
-    padding-left: 150px;
+    padding-left: 160px;
     margin-bottom: 20px;
 }
 
@@ -443,11 +518,37 @@ ul.breadcrumb-list .current::before {
     margin-bottom: 0;
 }
 
+h2.complete-comment {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+}
 
+h2.complete-comment span {
+    color: #EA3322;
+}
 
+.reception-slip-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
 
+.reception-slip-info img {
+    max-width: 165px;
+}
 
 @media screen and (max-width : 768px) {
+    .form-box .full-capacity {
+        font-size: 1.4rem;
+    }
+
+    .form-box .note-limit {
+        margin: 10px 0;
+        padding: 0;
+        text-indent: 0;
+    }
+
     .form-box .place-label {
         font-size: 1.4rem;
     }
@@ -469,7 +570,8 @@ ul.breadcrumb-list .current::before {
         padding-left: 0;
     }
 
-
-
+    h2.complete-comment {
+        font-size: 1.7rem;
+    }
 }
 /* #endregion 申込フォーム */
