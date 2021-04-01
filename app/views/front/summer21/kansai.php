@@ -410,7 +410,7 @@
 						</p>
 					</div> <!-- end of .measures-content -->
 				</div> <!-- end of container -->
-			</div>
+			</div> <!-- end of .measures -->
 
 			<div class="lineup">
 				<div class="container">
@@ -429,7 +429,7 @@
 						</div>
 					</div> <!-- end of .lineup-content -->
 				</div> <!-- end of container -->
-			</div>
+			</div> <!-- end of .lineup -->
 		</section>
 
 		<div class="container">
@@ -437,7 +437,7 @@
 				<h1 class="title">参加お申込み方法</h1>
 				<p class="info-apply-method">
 					セミナーにご参加いただくには、事前のお申し込みが必要となります。
-					下のお申込みフォームからお申し込みください。
+					下のお申込みフォームからお申し込みください。<br>
 					申込フォームを送信すると、受付票をダウンロードしていただけますので、保存をお願いいたします。
 					また、入力いただいたメールアドレスにも受付票のＵＲＬを送らせていただきます。
 					セミナー当日は、受付票を必ずご持参いただき、受付にお見せください。

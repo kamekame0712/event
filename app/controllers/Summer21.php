@@ -589,8 +589,29 @@ class Summer21 extends MY_Controller
 						}
 					}
 				}
-
 				break;
+
+			case 'chushikoku':
+				$view_file = 'front/summer21/apply_exhibition_chushikoku';
+
+				$exhibition_data = $this->m_exhibition->get_list(array('office' => '3'), 'event_date ASC, place_summer21 ASC');	// 3:中四国オフィス
+				if( !empty($exhibition_data) ) {
+					foreach( $exhibition_data as $exhibition ) {
+						$detail_data = $this->m_exhibition_detail->get_list(array('exhibition_summer21_id' => $exhibition['exhibition_summer21_id']), 'serial_number ASC');
+						if( !empty($detail_data) ) {
+							foreach( $detail_data as $detail ) {
+								$remain_exhibition[$exhibition['place_summer21']][$detail['serial_number']] = array(
+									'detail_id'	=> $detail['exhibition_detail_summer21_id'],
+									'start'		=> $detail['exhibition_time_start'],
+									'end'		=> $detail['exhibition_time_end'],
+									'remain'	=> intval($detail['capacity']) - intval($detail['reserved'])
+								);
+							}
+						}
+					}
+				}
+				break;
+
 			default:
 				redirect('errors/error_404');
 				return;
@@ -642,6 +663,21 @@ class Summer21 extends MY_Controller
 
 		$area = '';
 		switch( $place ) {
+			case '2':
+				$area = '広島会場［５月２６日（水）］';
+				break;
+			case '3':
+				$area = '岡山会場［５月３１日（月）］';
+				break;
+			case '4':
+				$area = '松山会場［５月２７日（木）］';
+				break;
+			case '5':
+				$area = '福山会場［５月２８日（金）］';
+				break;
+			case '6':
+				$area = '米子会場［５月２５日（火）］';
+				break;
 			case '7':
 				$area = '大阪会場［６月１日（火）］';
 				break;
@@ -745,6 +781,21 @@ class Summer21 extends MY_Controller
 
 			$area = $date = '';
 			switch( $place_summer21 ) {
+				case '2':
+					$area = '広島会場［５月２６日（水）］';
+					break;
+				case '3':
+					$area = '岡山会場［５月３１日（月）］';
+					break;
+				case '4':
+					$area = '松山会場［５月２７日（木）］';
+					break;
+				case '5':
+					$area = '福山会場［５月２８日（金）］';
+					break;
+				case '6':
+					$area = '米子会場［５月２５日（火）］';
+					break;
 				case '7':
 					$area = '大阪会場［６月１日（火）］';
 					break;
@@ -765,6 +816,13 @@ class Summer21 extends MY_Controller
 					$office_add = '〒532-0003　大阪市淀川区宮原2-14-14 新大阪グランドビル9F';
 					$ofiice_tel = '06-6399-1400';
 					$office_fax = '06-6399-1415';
+					break;
+
+				case 'chushikoku':
+					$office_name = '中四国オフィス';
+					$office_add = '〒730-0013　広島市中区八丁堀15-6 広島ちゅうぎんビル3F';
+					$ofiice_tel = '082-227-3999';
+					$office_fax = '082-227-4000';
 					break;
 			}
 
@@ -792,7 +850,8 @@ class Summer21 extends MY_Controller
 
 		$view_data = array(
 			'ERR_STR'	=> $err_str,
-			'RECEPTION'	=> $reception_slip_no
+			'RECEPTION'	=> $reception_slip_no,
+			'OFFICE'	=> $office
 		);
 
 		$this->load->view('front/summer21/apply_exhibition_complete', $view_data);
@@ -828,6 +887,21 @@ class Summer21 extends MY_Controller
 
 		$area = '';
 		switch( $exhibition_data['place_summer21'] ) {
+			case '2':
+				$area = '広島会場［５月２６日（水）］';
+				break;
+			case '3':
+				$area = '岡山会場［５月３１日（月）］';
+				break;
+			case '4':
+				$area = '松山会場［５月２７日（木）］';
+				break;
+			case '5':
+				$area = '福山会場［５月２８日（金）］';
+				break;
+			case '6':
+				$area = '米子会場［５月２５日（火）］';
+				break;
 			case '7':
 				$area = '大阪会場［６月１日（火）］';
 				break;
@@ -883,6 +957,31 @@ class Summer21 extends MY_Controller
 
 		$source_file = $area = $date = '';
 		switch( $exhibition_data['place_summer21'] ) {
+			case '2':
+				$source_file = 'reception_slip_exhibition_c.pdf';
+				$area = '広島会場';
+				$date = '５月２６日（水）';
+				break;
+			case '3':
+				$source_file = 'reception_slip_exhibition_c.pdf';
+				$area = '岡山会場';
+				$date = '５月３１日（月）';
+				break;
+			case '4':
+				$source_file = 'reception_slip_exhibition_c.pdf';
+				$area = '松山会場';
+				$date = '５月２７日（木）';
+				break;
+			case '5':
+				$source_file = 'reception_slip_exhibition_c.pdf';
+				$area = '福山会場';
+				$date = '５月２８日（金）';
+				break;
+			case '6':
+				$source_file = 'reception_slip_exhibition_c.pdf';
+				$area = '米子会場';
+				$date = '５月２５日（火）';
+				break;
 			case '7':
 				$source_file = 'reception_slip_exhibition_k.pdf';
 				$area = '大阪会場';
@@ -929,6 +1028,14 @@ class Summer21 extends MY_Controller
 			$pdf->Text(73, 100, $apply_exhibition_data['juku_name']);
 			$pdf->Text(73, 125.5, $apply_exhibition_data['guest_num'] . '名');
 			$pdf->Text(73, 152.5, '参加 ' . $exhibition_time);
+		}
+
+		if( $exhibition_data['office'] == '3' ) {
+			$pdf->Text(73, 49.5, $area);
+			$pdf->Text(73, 72, $date);
+			$pdf->Text(73, 95.6, $apply_exhibition_data['juku_name']);
+			$pdf->Text(73, 120.3, $apply_exhibition_data['guest_num'] . '名');
+			$pdf->Text(73, 148.7, $exhibition_time);
 		}
 
 		$pdf->Output();

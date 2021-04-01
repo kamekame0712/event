@@ -1,0 +1,160 @@
+.top-image {
+	position: relative;
+	padding: 20px 0;
+	min-height: 150px;
+}
+
+.top-image .new-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 175px;
+	transform: rotate(-35deg)
+}
+
+.top-image h2 {
+	text-align: center;
+	font-size: 2.2rem;
+	font-weight: bold;
+	color: #0055A6;
+}
+
+.guide {
+	background:
+		linear-gradient(-160deg, #0055A6 6px, transparent 0),
+		linear-gradient(160deg, #0055A6 6px, #FFF24A 0);
+	background-color: #0055A6;
+	background-size: 25px 6px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	margin-bottom: 0;
+}
+
+.guide .guide-content {
+	padding: 60px 0 15px;
+	color: #FFFFFF;
+}
+
+.guide .guide-content h3 {
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.measures {
+	background-color: #FFF24A;
+	margin-bottom: 60px;
+}
+
+.measures .measures-content {
+    padding: 15px;
+}
+
+.measures .measures-content .description {
+    text-align: center;
+    font-weight: bold;
+    color: #0055A6;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.measures .measures-content .note {
+    font-size: small;
+}
+
+.measures .measures-content .measures-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap
+}
+
+.measures .measures-content .measures-list img {
+    width: auto;
+    margin: 0 10px 10px;
+}
+
+.info-apply-method {
+    margin: 20px 40px;
+}
+
+.apply-method-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.apply-method-image img {
+    max-width: 165px;
+}
+
+.venue-name {
+    background-color: #FFF24A;
+    color: #0055A6;
+    font-weight: bold;
+    font-size: 1.9rem;
+    display: inline-block;
+    padding: 1px 5px;
+    margin-top: 10px;
+}
+
+.venue-box .date {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .name {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .room {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.0rem;
+    margin: 0 0 10px;
+}
+
+.venue-box .address {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+}
+
+iframe {
+    width: 100%;
+}
+
+.text-attention {
+    color: #EA3322;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+@media screen and (max-width : 768px) {
+	.measures {
+		margin-bottom: 30px;
+	}
+
+	.measures .measures-content .measures-list {
+        display: block;
+        text-align: center;
+    }
+
+	.measures .measures-content .measures-list img {
+		width: 70px;
+	}
+
+    .info-apply-method {
+        margin: 10px 15px 20px;
+    }
+
+    .apply-method-image {
+        margin-bottom: 20px;
+    }
+}
