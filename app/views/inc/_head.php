@@ -14,7 +14,13 @@
 	<link rel="stylesheet" href="<?= base_url('css/style.common.css') ?>?var=<?= CACHES_CLEAR_VERSION ?>">
 
 	<?php if( isset($CSS) ): ?>
-	<link rel="stylesheet" href="<?= base_url('css/' . $CSS) ?>?var=<?= CACHES_CLEAR_VERSION ?>">
+		<?php if( is_array($CSS) ): ?>
+			<?php foreach( $CSS as $val ): ?>
+				<link rel="stylesheet" href="<?= base_url('css/' . $val) ?>?var=<?= CACHES_CLEAR_VERSION ?>">
+			<?php endforeach; ?>
+		<?php else: ?>
+			<link rel="stylesheet" href="<?= base_url('css/' . $CSS) ?>?var=<?= CACHES_CLEAR_VERSION ?>">
+		<?php endif; ?>
 	<?php endif; ?>
 
 	<title><?= $TITLE ?></title>

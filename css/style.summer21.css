@@ -1,9 +1,3 @@
-/**********************************/
-/*                                */
-/*  メインイメージの青： #0055A6  */
-/*                                */
-/**********************************/
-
 /* #region 全体 */
 .go-to-top {
     color: #0055A6;
@@ -22,6 +16,12 @@ h1.title {
     font-weight: bold;
     color: #0055A6;
     border-bottom: 1px solid #0055A6;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted #666666;
+    margin: 30px 0;
 }
 
 input[type="checkbox"] {
@@ -204,6 +204,17 @@ input[type="radio"]:checked + .for-radio::after {
     .for-radio::after {
         top: 15px;
     }
+
+    .arrow-triangle-right {
+        width: 50px;
+    }
+
+    .arrow-triangle-right::after {
+        border-top: 13px solid transparent;
+        border-right: 0 solid transparent;
+        border-bottom: 13px solid transparent;
+        border-left: 15px solid #EA3322;
+        }
 }
 /* #endregion 全体 */
 
@@ -297,30 +308,6 @@ footer .copyright {
     padding: 5px 0;
 }
 /* #endregion フッター */
-
-/* #region メインページ */
-.area-box {
-    text-align: center;
-    font-weight: bold;
-}
-
-.area-box span {
-    display: inline-block;
-    background-color: #FFF24A;
-    padding: 3px 10px;
-    margin: 0 0 20px;
-}
-
-
-
-
-
-
-
-
-
-
-/* #endregion メインページ */
 
 /* #region 申込フォーム */
 ul.breadcrumb-list {

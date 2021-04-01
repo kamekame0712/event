@@ -1,0 +1,803 @@
+.area-box {
+    text-align: center;
+    font-weight: bold;
+}
+
+.area-box span {
+    display: inline-block;
+    background-color: #FFF24A;
+    padding: 3px 10px;
+    margin: 0 0 20px;
+}
+
+.venue-arrow {
+    display: inline-block;
+    background-color: #FFF24A;
+    padding: 3px 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+.venue-arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -17px;
+    left: 12px;
+    width: 0;
+    height: 0;
+    border-top: 18px solid #FFF24A;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.detail-box {
+    border: 2px solid #FFF24A;
+    padding: 20px 0;
+    margin: 8px 0 30px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.detail-box h3.speaker-name {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 5.0rem;
+    font-weight: bold;
+    color: #0055A6;
+    border-bottom: 1px solid #0055A6;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.detail-box h3.speaker-name span {
+    font-size: 3.0rem;
+}
+
+.detail-box dl.event-data {
+    margin: 0;
+    padding: 0;
+}
+
+.detail-box dl.event-data::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.detail-box dl.event-data dt {
+    font-weight: bold;
+    background-color: #FFF24A;
+    padding: 1px 0;
+    color: #0055A6;
+    width: 60px;
+    text-align: center;
+    float: left;
+}
+
+.detail-box dl.event-data dd {
+    padding-left: 70px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.detail-box dl.event-data dt.event-date {
+    margin-top: 14px;
+}
+
+.detail-box dl.event-data dd.event-date {
+    font-size: 2.0rem;
+}
+
+.detail-box dl.event-data dd span {
+    font-size: 3.0rem;
+}
+
+.detail-box .speaker-box {
+    position: absolute;
+    width: 50%;
+    top: 30px;
+    right: 0;
+}
+
+.detail-box .speaker-box h3.seminar-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-style: italic;
+    transform: rotate(-5deg);
+    text-align: center;
+}
+
+.detail-box .speaker-box .speaker-info {
+    background-color: #FFF24A;
+    position: relative;
+    padding: 30px 0;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.detail-box .speaker-box .speaker-info h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box .speaker-box .speaker-info img {
+    display: block;
+    max-width: 260px;
+    position: absolute;
+    bottom: 0;
+    right: -25px;
+}
+
+.detail-box .limit-num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #D2EBF8;
+    padding: 10px 250px 10px 135px;
+}
+
+.detail-box .limit-num img {
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    width: 110px;
+}
+
+.detail-box .limit-num h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box .limit-num .place-limit {
+    color: #0055A6;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.detail-box .limit-num .place-limit .place-name {
+    font-size: 2.5rem;
+}
+
+.detail-box .limit-num .place-limit .first-come {
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.detail-box .limit-num .place-limit .number {
+    font-size: 4.5rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 2px 0px,  #FFFFFF -2px 0px,
+        #FFFFFF 0px -2px, #FFFFFF 0px 2px,
+        #FFFFFF 2px 2px , #FFFFFF -2px 2px,
+        #FFFFFF 2px -2px, #FFFFFF -2px -2px,
+        #FFFFFF 1px 2px,  #FFFFFF -1px 2px,
+        #FFFFFF 1px -2px, #FFFFFF -1px -2px,
+        #FFFFFF 2px 1px,  #FFFFFF -2px 1px,
+        #FFFFFF 2px -1px, #FFFFFF -2px -1px;
+}
+
+.detail-box-sp {
+    border: 2px solid #FFF24A;
+    padding: 10px 0;
+    margin: 8px 0 20px;
+    border-radius: 6px;
+}
+
+.detail-box-sp h3.speaker-name {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #0055A6;
+    border-bottom: 1px solid #0055A6;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.detail-box-sp h3.speaker-name span {
+    font-size: 2.3rem;
+}
+
+.detail-box-sp h3.seminar-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    font-style: italic;
+    transform: rotate(-5deg);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.detail-box-sp p{
+    padding: 0 10px;
+}
+
+.detail-box-sp dl.event-data {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.detail-box-sp dl.event-data::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.detail-box-sp dl.event-data dt {
+    font-weight: bold;
+    background-color: #FFF24A;
+    padding: 1px 0;
+    color: #0055A6;
+    width: 60px;
+    text-align: center;
+    float: left;
+}
+
+.detail-box-sp dl.event-data dd {
+    padding-left: 70px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.detail-box-sp dl.event-data dt.event-date {
+    margin-top: 8px;
+}
+
+.detail-box-sp dl.event-data dd.event-date {
+    font-size: 1.5rem;
+}
+
+.detail-box-sp dl.event-data dd span {
+    font-size: 2.1rem;
+}
+
+.detail-box-sp .speaker-box {
+    background-color: #FFF24A;
+    position: relative;
+    padding: 10px 90px 10px 10px;
+    margin: 20px 0 0 30px;
+    z-index: 10;
+}
+
+.detail-box-sp .speaker-box h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.detail-box-sp .speaker-box img {
+    display: block;
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+}
+
+.detail-box-sp .limit-num {
+    background-color: #D2EBF8;
+    position: relative;
+    padding: 30px 10px 10px 95px;
+    margin: -20px 30px 0 0;
+
+}
+
+.detail-box-sp .limit-num img {
+    display: block;
+    width: 85px;
+    position: absolute;
+    top: 25px;
+    left: 5px;
+}
+
+.detail-box-sp .limit-num h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box-sp .limit-num .place-limit {
+    color: #0055A6;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.detail-box-sp .limit-num .place-limit .place-name {
+    font-size: 1.8rem;
+}
+
+.detail-box-sp .limit-num .place-limit .first-come {
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.detail-box-sp .limit-num .place-limit .number {
+    font-size: 3.0rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 2px 0px,  #FFFFFF -2px 0px,
+        #FFFFFF 0px -2px, #FFFFFF 0px 2px,
+        #FFFFFF 2px 2px , #FFFFFF -2px 2px,
+        #FFFFFF 2px -2px, #FFFFFF -2px -2px,
+        #FFFFFF 1px 2px,  #FFFFFF -1px 2px,
+        #FFFFFF 1px -2px, #FFFFFF -1px -2px,
+        #FFFFFF 2px 1px,  #FFFFFF -2px 1px,
+        #FFFFFF 2px -1px, #FFFFFF -2px -1px;
+}
+
+.detail-box2 {
+    border: 2px solid #FFF24A;
+    padding: 20px 0;
+    margin: 8px 0 30px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.detail-box2 .text-image1,
+.detail-box2 .text-image2 {
+    position: absolute;
+    width: 140px;
+    top: 75px;
+    box-shadow: 2px 2px 6px #666666;
+}
+
+.detail-box2 .text-image1 {
+    right: 190px;
+}
+
+.detail-box2 .text-image2 {
+    right: 30px;
+}
+
+.detail-box2 h3.seminar-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.detail-box2 dl.event-data {
+    margin: 20px 0 0 15px;
+    padding: 0;
+}
+
+.detail-box2 dl.event-data::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.detail-box2 dl.event-data dt {
+    font-weight: bold;
+    background-color: #FFF24A;
+    padding: 1px 0;
+    color: #0055A6;
+    width: 60px;
+    text-align: center;
+    float: left;
+}
+
+.detail-box2 dl.event-data dd {
+    padding-left: 70px;
+    margin-bottom: 20px;
+    width: 460px;
+    font-weight: bold;
+}
+
+.detail-box2 dl.event-data dd.en {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 2.0rem;
+}
+
+.detail-box2 dl.event-data dt.event-date {
+    margin-top: 14px;
+}
+
+.detail-box2 dl.event-data dd.event-date {
+    font-size: 2.0rem;
+}
+
+.detail-box2 dl.event-data dd span {
+    font-size: 3.0rem;
+}
+
+.detail-box2 .note {
+    margin-left: 15px;
+    width: 380px;
+    height: 170px;
+    overflow: hidden;
+}
+
+.detail-box2 .limit-num {
+    background-color: #FFF681;
+    padding: 20px 60px 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+.detail-box2 .limit-num h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box2 .limit-num .place-limit {
+    color: #0055A6;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.detail-box2 .limit-num .place-limit .place-name {
+    font-size: 2.5rem;
+}
+
+.detail-box2 .limit-num .place-limit .first-come {
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.detail-box2 .limit-num .place-limit .number {
+    font-size: 4.5rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 2px 0px,  #FFFFFF -2px 0px,
+        #FFFFFF 0px -2px, #FFFFFF 0px 2px,
+        #FFFFFF 2px 2px , #FFFFFF -2px 2px,
+        #FFFFFF 2px -2px, #FFFFFF -2px -2px,
+        #FFFFFF 1px 2px,  #FFFFFF -1px 2px,
+        #FFFFFF 1px -2px, #FFFFFF -1px -2px,
+        #FFFFFF 2px 1px,  #FFFFFF -2px 1px,
+        #FFFFFF 2px -1px, #FFFFFF -2px -1px;
+}
+
+.detail-box2-sp {
+    border: 2px solid #FFF24A;
+    padding: 10px 0;
+    margin: 8px 0 20px;
+    border-radius: 6px;
+}
+
+.detail-box2-sp .seminar-title {
+    font-size: 2.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.detail-box2-sp dl.event-data {
+    margin: 20px 0 0 15px;
+    padding: 0;
+}
+
+.detail-box2-sp dl.event-data::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.detail-box2-sp dl.event-data dt {
+    font-weight: bold;
+    background-color: #FFF24A;
+    padding: 1px 0;
+    color: #0055A6;
+    width: 60px;
+    text-align: center;
+    float: left;
+}
+
+.detail-box2-sp dl.event-data dd {
+    padding-left: 70px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box2-sp dl.event-data dd.en {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 1.6rem;
+}
+
+.detail-box2-sp dl.event-data dt.event-date {
+    margin-top: 8px;
+}
+
+.detail-box2-sp dl.event-data dd span {
+    font-size: 2.2rem;
+}
+
+.detail-box2-sp .text-image {
+    width: 100px;
+    box-shadow: 2px 2px 6px #666666;
+}
+
+.detail-box2-sp .note {
+    padding: 0 15px;
+}
+
+.detail-box2-sp .limit-num {
+    background-color: #FFF681;
+    padding: 5px 0 0 30px;
+    margin-left: 60px;
+}
+
+.detail-box2-sp .limit-num h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.detail-box2-sp .limit-num .place-limit {
+    color: #0055A6;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.detail-box2-sp .limit-num .place-limit .place-name {
+    font-size: 2.2rem;
+}
+
+.detail-box2-sp .limit-num .place-limit .first-come {
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.detail-box2-sp .limit-num .place-limit .number {
+    font-size: 3.3rem;
+    display: inline-block;
+    margin-left: 5px;
+    color: #222222;
+    text-shadow:
+        #FFFFFF 2px 0px,  #FFFFFF -2px 0px,
+        #FFFFFF 0px -2px, #FFFFFF 0px 2px,
+        #FFFFFF 2px 2px , #FFFFFF -2px 2px,
+        #FFFFFF 2px -2px, #FFFFFF -2px -2px,
+        #FFFFFF 1px 2px,  #FFFFFF -1px 2px,
+        #FFFFFF 1px -2px, #FFFFFF -1px -2px,
+        #FFFFFF 2px 1px,  #FFFFFF -2px 1px,
+        #FFFFFF 2px -1px, #FFFFFF -2px -1px;
+}
+
+.venue-name {
+    background-color: #FFF24A;
+    color: #0055A6;
+    font-weight: bold;
+    font-size: 1.9rem;
+    display: inline-block;
+    padding: 1px 5px;
+    margin-top: 10px;
+}
+
+.venue-box .date {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .name {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .room {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.0rem;
+    margin: 0 0 10px;
+}
+
+.venue-box .address {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+}
+
+iframe {
+    width: 100%;
+}
+
+.text-attention {
+    color: #EA3322;
+    font-weight: bold;
+}
+
+.measures {
+    background:
+        linear-gradient(-160deg, #FFF24A 6px, transparent 0),
+        linear-gradient(160deg, #FFF24A 6px, #0055A6 0);
+    background-color: #FFF24A;
+    background-size: 25px 6px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    margin-bottom: 0;
+}
+
+.measures .measures-content {
+    padding: 15px;
+}
+
+.measures .measures-content .description {
+    text-align: center;
+    font-weight: bold;
+    color: #0055A6;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.measures .measures-content .note {
+    font-size: small;
+}
+
+.measures .measures-content .measures-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap
+}
+
+.measures .measures-content .measures-list img {
+    width: auto;
+    margin: 0 10px 10px;
+}
+
+.lineup {
+    background-color: #0055A6;
+    margin-bottom: 50px;
+}
+
+.lineup .lineup-content {
+    padding: 15px 60px;
+    position: relative;
+}
+
+.lineup .lineup-content img.new-label {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    width: 175px;
+}
+
+.lineup .lineup-content .lead {
+    display: inline-block;
+    color: #FFF24A;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.lineup .lineup-content h3 {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.lineup .lineup-content .text-list {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.lineup .lineup-content .text-list img {
+    width: 120px;
+    margin: 0 10px;
+}
+
+.info-apply-method {
+    margin: 20px 40px;
+}
+
+.apply-method-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.apply-method-image img {
+    max-width: 165px;
+}
+
+@media screen and (max-width : 768px) {
+    .measures .measures-content .measures-list {
+        display: block;
+        text-align: center;
+    }
+
+    .measures .measures-content .measures-list img.narrow {
+        width: 70px;
+    }
+
+    .measures .measures-content .measures-list img.wide {
+        width: 140px;
+    }
+
+    .lineup {
+        margin-bottom: 30px;
+    }
+
+    .lineup .lineup-content {
+        padding: 15px;
+    }
+
+    .lineup .lineup-content img.new-label {
+        width: 85px;
+        top: auto;
+        bottom: 60px;
+        right: 0;
+    }
+
+    .lineup .lineup-content .lead {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .lineup .lineup-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .lineup .lineup-content .text-list img {
+        width: 20%;
+    }
+
+    .info-apply-method {
+        margin: 10px 15px 20px;
+    }
+
+    .apply-method-image {
+        margin-bottom: 20px;
+    }
+}
