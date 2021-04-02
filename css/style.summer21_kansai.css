@@ -1,6 +1,7 @@
 .area-box {
     text-align: center;
     font-weight: bold;
+    font-size: 3.0rem;
 }
 
 .area-box span {
@@ -8,6 +9,7 @@
     background-color: #FFF24A;
     padding: 3px 10px;
     margin: 0 0 20px;
+    font-size: 2.5rem;
 }
 
 .venue-arrow {
@@ -34,7 +36,7 @@
 
 .detail-box {
     border: 2px solid #FFF24A;
-    padding: 20px 0;
+    padding: 0;
     margin: 8px 0 30px;
     border-radius: 6px;
     position: relative;
@@ -48,14 +50,19 @@
     border-bottom: 1px solid #0055A6;
     display: inline-block;
     padding: 0 10px;
+    margin: 20px 0 20px 15px;
 }
 
 .detail-box h3.speaker-name span {
     font-size: 3.0rem;
 }
 
+.detail-box p {
+    margin: 0 10px 20px 15px;
+}
+
 .detail-box dl.event-data {
-    margin: 0;
+    margin: 0 0 0 15px;
     padding: 0;
 }
 
@@ -93,52 +100,10 @@
     font-size: 3.0rem;
 }
 
-.detail-box .speaker-box {
-    position: absolute;
-    width: 50%;
-    top: 30px;
-    right: 0;
-}
-
-.detail-box .speaker-box h3.seminar-title {
-    font-size: 3.2rem;
-    font-weight: bold;
-    font-style: italic;
-    transform: rotate(-5deg);
-    text-align: center;
-}
-
-.detail-box .speaker-box .speaker-info {
-    background-color: #FFF24A;
-    position: relative;
-    padding: 30px 0;
-    margin-top: 20px;
-    z-index: 10;
-}
-
-.detail-box .speaker-box .speaker-info h4 {
-    display: inline-block;
-    background-color: #FFFFFF;
-    color: #0055A6;
-    padding: 3px 10px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.detail-box .speaker-box .speaker-info img {
-    display: block;
-    max-width: 260px;
-    position: absolute;
-    bottom: 0;
-    right: -25px;
-}
-
 .detail-box .limit-num {
-    position: absolute;
-    top: 0;
-    left: 0;
     background-color: #D2EBF8;
-    padding: 10px 250px 10px 135px;
+    padding: 10px 10px 10px 135px;
+    position: relative;
 }
 
 .detail-box .limit-num img {
@@ -195,9 +160,48 @@
         #FFFFFF 2px -1px, #FFFFFF -2px -1px;
 }
 
+.detail-box .speaker-box {
+    padding: 0;
+    margin: 0;
+}
+
+.detail-box .speaker-box h3.seminar-title {
+    font-size: 5.0rem;
+    font-weight: bold;
+    font-style: italic;
+    transform: rotate(-5deg);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.detail-box .speaker-box .speaker-info {
+    background-color: #FFF24A;
+    position: relative;
+    padding: 20px 0 0;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.detail-box .speaker-box .speaker-info h4 {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.detail-box .speaker-box .speaker-info img {
+    display: block;
+    max-width: 260px;
+    position: absolute;
+    bottom: 0;
+    right: -25px;
+}
+
 .detail-box-sp {
     border: 2px solid #FFF24A;
-    padding: 10px 0;
+    padding: 10px 0 0;
     margin: 8px 0 20px;
     border-radius: 6px;
 }
@@ -227,20 +231,27 @@
 
 .detail-box-sp p{
     padding: 0 10px;
+    margin-bottom: 35px;
 }
 
-.detail-box-sp dl.event-data {
+.detail-box-sp .event-data-box {
+    position: relative;
+}
+
+.detail-box-sp .event-data-box dl.event-data {
     margin: 0;
     padding: 0 10px;
+    position: relative;
+    z-index: 2;
 }
 
-.detail-box-sp dl.event-data::after {
+.detail-box-sp .event-data-box dl.event-data::after {
     content: "";
     display: block;
     clear: both;
 }
 
-.detail-box-sp dl.event-data dt {
+.detail-box-sp .event-data-box dl.event-data dt {
     font-weight: bold;
     background-color: #FFF24A;
     padding: 1px 0;
@@ -250,30 +261,47 @@
     float: left;
 }
 
-.detail-box-sp dl.event-data dd {
+.detail-box-sp .event-data-box dl.event-data dd {
     padding-left: 70px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-.detail-box-sp dl.event-data dt.event-date {
+.detail-box-sp .event-data-box dl.event-data dt.event-date {
     margin-top: 8px;
 }
 
-.detail-box-sp dl.event-data dd.event-date {
+.detail-box-sp .event-data-box dl.event-data dd.event-date {
     font-size: 1.5rem;
 }
 
-.detail-box-sp dl.event-data dd span {
+.detail-box-sp .event-data-box dl.event-data dd span.ym {
     font-size: 2.1rem;
+}
+
+.detail-box-sp .event-data-box dl.event-data dd span.overlapping {
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.detail-box-sp .event-data-box img {
+    display: block;
+    width: auto;
+    height: 200px;
+    position: absolute;
+    bottom: -20px;
+    right: 5px;
+    z-index: 1;
 }
 
 .detail-box-sp .speaker-box {
     background-color: #FFF24A;
     position: relative;
-    padding: 10px 90px 10px 10px;
-    margin: 20px 0 0 30px;
-    z-index: 10;
+    padding: 10px;
+    margin: 20px 0 0;
 }
 
 .detail-box-sp .speaker-box h4 {
@@ -285,19 +313,11 @@
     font-weight: bold;
 }
 
-.detail-box-sp .speaker-box img {
-    display: block;
-    width: 120px;
-    position: absolute;
-    bottom: 0;
-    right: -15px;
-}
-
 .detail-box-sp .limit-num {
     background-color: #D2EBF8;
     position: relative;
     padding: 30px 10px 10px 95px;
-    margin: -20px 30px 0 0;
+    margin: 0;
 
 }
 
@@ -685,12 +705,11 @@ iframe {
 .measures .measures-content .measures-list {
     display: flex;
     justify-content: center;
-    flex-wrap:wrap
+    flex-wrap: wrap
 }
 
-.measures .measures-content .measures-list img {
-    width: auto;
-    margin: 0 10px 10px;
+.measures .measures-content .measures-list .image-wrapper {
+    padding: 0 10px;
 }
 
 .lineup {
@@ -711,7 +730,11 @@ iframe {
     width: 175px;
 }
 
-.lineup .lineup-content .lead {
+.lineup .lineup-content .lineup-lead {
+    text-align: center;
+}
+
+.lineup .lineup-content .lineup-lead .lead {
     display: inline-block;
     color: #FFF24A;
     font-size: 1.6rem;
@@ -721,7 +744,8 @@ iframe {
 
 .lineup .lineup-content h3 {
     color: #FFFFFF;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    text-align: center;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -732,7 +756,7 @@ iframe {
     justify-content: center;
 }
 
-.lineup .lineup-content .text-list img {
+.lineup .lineup-content .text-list .image-wrapper {
     width: 120px;
     margin: 0 10px;
 }
@@ -747,21 +771,35 @@ iframe {
     margin-bottom: 40px;
 }
 
-.apply-method-image img {
+.apply-method-image .image-wrapper {
     max-width: 165px;
 }
 
 @media screen and (max-width : 768px) {
+    .area-box {
+        font-size: 1.9rem;
+    }
+
+    .area-box span {
+        font-size: 1.8rem;
+    }
+
     .measures .measures-content .measures-list {
         display: block;
         text-align: center;
     }
 
-    .measures .measures-content .measures-list img.narrow {
-        width: 70px;
+    .measures .measures-content .measures-list .image-wrapper {
+        display: inline-block;
+        padding: 0;
     }
 
-    .measures .measures-content .measures-list img.wide {
+    .measures .measures-content .measures-list .narrow {
+        width: 70px;
+        margin: 5px;
+    }
+
+    .measures .measures-content .measures-list .wide {
         width: 140px;
     }
 
@@ -787,10 +825,6 @@ iframe {
 
     .lineup .lineup-content h3 {
         font-size: 1.6rem;
-    }
-
-    .lineup .lineup-content .text-list img {
-        width: 20%;
     }
 
     .info-apply-method {
