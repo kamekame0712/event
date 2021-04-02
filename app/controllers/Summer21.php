@@ -370,7 +370,8 @@ class Summer21 extends MY_Controller
 
 		$view_data = array(
 			'ERR_STR'	=> $err_str,
-			'RECEPTION'	=> $reception_slip_no
+			'RECEPTION'	=> $reception_slip_no,
+			'OFFICE'	=> $office
 		);
 
 		$this->load->view('front/summer21/apply_seminar_complete', $view_data);

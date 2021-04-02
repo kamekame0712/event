@@ -83,7 +83,7 @@
 													'value'	=> $exhibition[3]['detail_id'],
 													'checked'	=> set_checkbox('time', $exhibition[3]['detail_id'], FALSE)
 												)); ?>
-												<?php echo form_label(date('H:i', strtotime($exhibition[3]['start'])) . '～' . date('H:i', strtotime($exhibition[3]['end'])), 'time_' . $exhibition[3]['detail_id'], array('class' => 'for-radio place-label')); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[3]['start'])) . '～' . date('H:i', strtotime($exhibition[3]['end'])) . '（40人迄）', 'time_' . $exhibition[3]['detail_id'], array('class' => 'for-radio place-label')); ?>
 											<?php else: ?>
 												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[3]['start'])) ?>～<?= date('H:i', strtotime($exhibition[3]['end'])) ?></p>
 												<span class="full-capacity-info">※満員</span>
@@ -98,7 +98,7 @@
 													'value'	=> $exhibition[4]['detail_id'],
 													'checked'	=> set_checkbox('time', $exhibition[4]['detail_id'], FALSE)
 												)); ?>
-												<?php echo form_label(date('H:i', strtotime($exhibition[4]['start'])) . '～' . date('H:i', strtotime($exhibition[4]['end'])), 'time_' . $exhibition[4]['detail_id'], array('class' => 'for-radio place-label')); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[4]['start'])) . '～' . date('H:i', strtotime($exhibition[4]['end'])) . '（40人迄）', 'time_' . $exhibition[4]['detail_id'], array('class' => 'for-radio place-label')); ?>
 											<?php else: ?>
 												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[4]['start'])) ?>～<?= date('H:i', strtotime($exhibition[4]['end'])) ?></p>
 												<span class="full-capacity-info">※満員</span>
@@ -203,6 +203,10 @@
 					</div> <!-- end of .container-fluid -->
 				</div> <!-- end of #confirm_area -->
 			<?php echo form_close(); ?>
+
+			<div class="anchor-to-back">
+				<a href="<?= site_url('summer21/kansai') ?>">トップに戻る</a>
+			</div>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>

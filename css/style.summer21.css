@@ -328,7 +328,7 @@ ul.breadcrumb-list {
 ul.breadcrumb-list li {
     margin: 0 10px;
     background-color: #DBEFFF;
-    padding: 5px 0;
+    padding: 13px 0;
     color: #0055A6;
     text-align: center;
     position: relative;
@@ -339,8 +339,8 @@ ul.breadcrumb-list li::before {
     content: "";
     position: absolute;
     top: 50%;
-    margin-top: -1.5em;
-    border-width: 1.5em 0 1.5em 1em;
+    margin-top: -1.7em;
+    border-width: 1.7em 0 1.7em 1em;
     border-style: solid;
     border-color: #DBEFFF #DBEFFF #DBEFFF transparent;
     left: -1em;
@@ -359,9 +359,9 @@ ul.breadcrumb-list li::after {
     content: "";
     position: absolute;
     top: 50%;
-    margin-top: -1.5em;
-    border-top: 1.5em solid transparent;
-    border-bottom: 1.5em solid transparent;
+    margin-top: -1.7em;
+    border-top: 1.7em solid transparent;
+    border-bottom: 1.7em solid transparent;
     border-left: 1em solid #DBEFFF;
     right: -1em;
 }
@@ -529,6 +529,16 @@ h2.complete-comment span {
 
 .reception-slip-info img {
     max-width: 165px;
+}
+
+.anchor-to-back {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.anchor-to-back a {
+    text-decoration: underline;
+    font-size: 1.4rem;
 }
 
 @media screen and (max-width : 768px) {

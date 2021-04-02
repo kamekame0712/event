@@ -54,6 +54,10 @@
 					</div>
 				</div>
 			<?php endif; ?>
+
+			<div class="anchor-to-back">
+				<a href="<?= site_url('summer21/' . $OFFICE) ?>">トップに戻る</a>
+			</div>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>

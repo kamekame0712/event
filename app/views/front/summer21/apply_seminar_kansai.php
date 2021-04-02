@@ -102,7 +102,7 @@
 								<dd>
 									11:00&nbsp;～&nbsp;12:15　講演<br>
 									12:15&nbsp;～&nbsp;12:30　質疑応答<br>
-									※受付は10:30から行っております。
+									※受付は10:00から行っております。
 								</dd>
 							</dl>
 						</div>
@@ -115,7 +115,7 @@
 								<dd>
 									11:00&nbsp;～&nbsp;12:30　講演<br>
 									12:30&nbsp;～&nbsp;12:40　質疑応答<br>
-									※受付は10:30から行っております。
+									※受付は10:00から行っております。
 								</dd>
 							</dl>
 						</div>
@@ -156,7 +156,7 @@
 													'value'	=> $exhibition[1]['detail_id'],
 													'checked'	=> set_checkbox('time', $exhibition[1]['detail_id'], FALSE)
 												)); ?>
-												<?php echo form_label(date('H:i', strtotime($exhibition[1]['start'])) . '～' . date('H:i', strtotime($exhibition[1]['end'])), 'time_' . $exhibition[1]['detail_id'], array('class' => 'for-radio place-label')); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[1]['start'])) . '～' . date('H:i', strtotime($exhibition[1]['end'])) . '（40人迄）', 'time_' . $exhibition[1]['detail_id'], array('class' => 'for-radio place-label')); ?>
 											<?php else: ?>
 												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[1]['start'])) ?>～<?= date('H:i', strtotime($exhibition[1]['end'])) ?></p>
 												<span class="full-capacity-info">※満員</span>
@@ -171,7 +171,7 @@
 													'value'	=> $exhibition[2]['detail_id'],
 													'checked'	=> set_checkbox('time', $exhibition[2]['detail_id'], FALSE)
 												)); ?>
-												<?php echo form_label(date('H:i', strtotime($exhibition[2]['start'])) . '～' . date('H:i', strtotime($exhibition[2]['end'])), 'time_' . $exhibition[2]['detail_id'], array('class' => 'for-radio place-label')); ?>
+												<?php echo form_label(date('H:i', strtotime($exhibition[2]['start'])) . '～' . date('H:i', strtotime($exhibition[2]['end'])) . '（40人迄）', 'time_' . $exhibition[2]['detail_id'], array('class' => 'for-radio place-label')); ?>
 											<?php else: ?>
 												<p class="full-capacity"><?= date('H:i', strtotime($exhibition[2]['start'])) ?>～<?= date('H:i', strtotime($exhibition[2]['end'])) ?></p>
 												<span class="full-capacity-info">※満員</span>
@@ -273,6 +273,10 @@
 					</div> <!-- end of .container-fluid -->
 				</div> <!-- end of #confirm_area -->
 			<?php echo form_close(); ?>
+
+			<div class="anchor-to-back">
+				<a href="<?= site_url('summer21/kansai') ?>">トップに戻る</a>
+			</div>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>
