@@ -2,7 +2,11 @@
 
 <body>
 	<div class="wrapper">
-		<?php $this->load->view('front/summer21/header'); ?>
+		<?php if( $OFFICE == '3' ): ?>
+			<?php $this->load->view('front/summer21/header_chushikoku'); ?>
+		<?php else: ?>
+			<?php $this->load->view('front/summer21/header'); ?>
+		<?php endif; ?>
 
 		<div class="container">
 			<h1 class="title">受付票</h1>

@@ -921,7 +921,8 @@ class Summer21 extends MY_Controller
 		$view_data = array(
 			'ADATA'		=> $apply_exhibition_data,
 			'AREA'		=> $area,
-			'TIME'		=> $exhibition_time
+			'TIME'		=> $exhibition_time,
+			'OFFICE'	=> $exhibition_data['office']
 		);
 
 		$this->load->view('front/summer21/exhibition_reception', $view_data);
