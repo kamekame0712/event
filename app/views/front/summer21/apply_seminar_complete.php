@@ -18,9 +18,13 @@
 				<h2 class="complete-comment"><span>受付票のダウンロードをお願いいたします。</span></h2>
 
 				<div class="reception-slip-info my-5">
-					<img src="<?= base_url('img/summer21/how_to_apply2.png') ?>" alt="受付票を保存">
+					<div class="image-wrapper">
+						<img src="<?= base_url('img/summer21/how_to_apply2.png') ?>" alt="受付票を保存">
+					</div>
 					<div class="arrow-triangle-right"></div>
-					<img src="<?= base_url('img/summer21/how_to_apply3.png') ?>" alt="受付票を当日持参">
+					<div class="image-wrapper">
+						<img src="<?= base_url('img/summer21/how_to_apply3.png') ?>" alt="受付票を当日持参">
+					</div>
 				</div>
 
 				<div class="row justify-content-center my-5">
