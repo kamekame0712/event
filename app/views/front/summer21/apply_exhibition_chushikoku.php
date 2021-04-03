@@ -271,6 +271,10 @@
 					</div> <!-- end of .container-fluid -->
 				</div> <!-- end of #confirm_area -->
 			<?php echo form_close(); ?>
+
+			<div class="anchor-to-back">
+				<a href="<?= site_url('summer21/chushikoku') ?>">トップに戻る</a>
+			</div>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>

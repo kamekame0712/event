@@ -13,8 +13,9 @@
 }
 
 .top-image h2 {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
 	text-align: center;
-	font-size: 2.2rem;
+	font-size: 3.5rem;
 	font-weight: bold;
 	color: #0055A6;
 }
@@ -36,9 +37,46 @@
 }
 
 .guide .guide-content h3 {
-	font-size: 2.5rem;
+	font-size: 3.0rem;
 	font-weight: bold;
-	text-align: center;
+    text-align: center;
+    color: #FFF24A;
+}
+
+.guide .guide-content .info-ict {
+    margin: 10px 0 20px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+}
+
+.guide .guide-content .info-ict h4 {
+    color: #0055A6;
+    font-weight: bold;
+    margin: 0 0 10px 65px;
+    font-size: 1.8rem;
+}
+
+.guide .guide-content .info-ict p {
+    color: #222222;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 100px;
+}
+
+.guide .guide-content .info-ict .measures-title {
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    width: 90px;
+}
+
+.guide .guide-content .info-ict .ict {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 70px;
 }
 
 .measures {
@@ -71,8 +109,7 @@
     flex-wrap:wrap
 }
 
-.measures .measures-content .measures-list img {
-    width: auto;
+.measures .measures-content .measures-list .image-wrapper {
     margin: 0 10px 10px;
 }
 
@@ -86,7 +123,7 @@
     margin-bottom: 40px;
 }
 
-.apply-method-image img {
+.apply-method-image .image-wrapper {
     max-width: 165px;
 }
 
@@ -137,7 +174,31 @@ iframe {
 }
 
 @media screen and (max-width : 768px) {
-	.measures {
+    .guide .guide-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .guide .guide-content .info-ict h4 {
+        font-size: 1.6rem;
+    }
+
+    .guide .guide-content .info-ict p {
+        padding: 0 45px 0 20px;
+    }
+
+    .guide .guide-content .info-ict .measures-title {
+        top: -16px;
+        left: -8px;
+        width: 80px;
+    }
+
+    .guide .guide-content .info-ict .ict {
+        bottom: 0;
+        right: 10px;
+        width: 60px;
+    }
+
+    .measures {
 		margin-bottom: 30px;
 	}
 
@@ -146,7 +207,8 @@ iframe {
         text-align: center;
     }
 
-	.measures .measures-content .measures-list img {
+	.measures .measures-content .measures-list .image-wrapper {
+        display: inline-block;
 		width: 70px;
 	}
 

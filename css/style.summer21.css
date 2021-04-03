@@ -564,6 +564,17 @@ h2.complete-comment span {
         font-size: 1.2rem;
     }
 
+    ul.breadcrumb-list li::before {
+        margin-top: -2.0em;
+        border-width: 2.0em 0 2.0em 1em;
+    }
+
+    ul.breadcrumb-list li::after {
+        margin-top: -2.0em;
+        border-top: 2.0em solid transparent;
+        border-bottom: 2.0em solid transparent;
+    }
+
     .form-box dl.item-box dt {
         float: none;
         width: auto;

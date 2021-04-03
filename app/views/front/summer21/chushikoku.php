@@ -15,15 +15,33 @@
 			<div class="guide">
 				<div class="container">
 					<div class="guide-content">
-						<h3>夏期講習用&amp;後期改訂・新刊テキストを一斉展示します！</h3>
+						<h3>学習指導要領が変わった初年度は、夏が勝負です！</h3>
 
 						<div class="row justify-content-center mt-3">
 							<div class="col-12 col-md-8">
 								<p>
-									基礎・基本の復習から秋以降の予習・受験対策まで、
-									学力レベルにあわせた夏期講習用テキストや今夏に改定・発刊予定のテキストを一斉展示します。
-									テキストの内容や組み合わせなど、手にとってご確認ください。
+									今年度は新学習指導要領の全面実施、そして中学校教科書の改訂年度です。
+									指導内容だけでなく指導方法も新しくなった又は追加された点があり、
+									学校での対応が不十分になることが予想されます。<br>
+									そんななか、この夏学習塾でどのように子どもたちをフォローするべきか?
+									本展示会では、子どもたちを確実にフォローし、秋以降の学習に繋げるためのテキストやシステム・ツールをご用意しています。
+									既存のテキストの改訂に加えて、新たなラインナップも登場しております。
+									貴塾の夏期講習の最適なテキスト選びのために、是非会場にてご確認ください。
 								</p>
+							</div>
+						</div>
+
+						<div class="row justify-content-center mt-3">
+							<div class="col-12 col-md-8">
+								<div class="info-ict">
+									<h4>場所や時間に捉われず学習できるＩＣＴツールも多数展示します！</h4>
+									<p>
+										映像教材や英語４技能対策アプリ、プログラミング教材など、会場にて実際に体験していただけます。
+										詳しくはスタッフまで！
+									</p>
+									<img src="<?= base_url('img/summer21/measures_title.png') ?>" alt="感染予防対策に！" class="measures-title">
+									<img src="<?= base_url('img/summer21/ict.png') ?>" alt="ICTツール" class="ict">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -39,14 +57,24 @@
 						</p>
 
 						<div class="measures-list">
-							<img src="<?= base_url('img/summer21/measures1.png') ?>" alt="感染対策">
-							<img src="<?= base_url('img/summer21/measures2.png') ?>" alt="感染対策">
-							<img src="<?= base_url('img/summer21/measures3.png') ?>" alt="感染対策">
-							<img src="<?= base_url('img/summer21/measures3.png') ?>" alt="感染対策">
-							<img src="<?= base_url('img/summer21/measures3.png') ?>" alt="感染対策">
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/measures1.png') ?>" alt="感染対策">
+							</div>
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/measures2.png') ?>" alt="感染対策">
+							</div>
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/measures3.png') ?>" alt="感染対策">
+							</div>
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/measures6.png') ?>" alt="感染対策">
+							</div>
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/measures7.png') ?>" alt="感染対策">
+							</div>
 						</div>
 
-						<p class="description note">
+						<p class="description note for-pc">
 							※展示会開催前に、主催のスタッフを対象にＰＣＲ検査を行います。
 							各会場は、陰性が確認されたスタッフのみ参加いたします。
 						</p>
@@ -66,11 +94,17 @@
 				セミナー当日は、受付票を必ずご持参いただき、受付にお見せください。
 			</p>
 			<div class="apply-method-image">
-				<img src="<?= base_url('img/summer21/how_to_apply1.png') ?>" alt="フォーム入力">
+				<div class="image-wrapper">
+					<img src="<?= base_url('img/summer21/how_to_apply1.png') ?>" alt="フォーム入力">
+				</div>
 				<div class="arrow-triangle-right"></div>
-				<img src="<?= base_url('img/summer21/how_to_apply2.png') ?>" alt="受付票を保存">
+				<div class="image-wrapper">
+					<img src="<?= base_url('img/summer21/how_to_apply2.png') ?>" alt="受付票を保存">
+				</div>
 				<div class="arrow-triangle-right"></div>
-				<img src="<?= base_url('img/summer21/how_to_apply3.png') ?>" alt="受付票を当日持参">
+				<div class="image-wrapper">
+					<img src="<?= base_url('img/summer21/how_to_apply3.png') ?>" alt="受付票を当日持参">
+				</div>
 			</div>
 
 			<div class="row justify-content-center">
@@ -94,7 +128,7 @@
 							<div class="col-12 col-md-6 px-0 venue-box">
 								<p class="date">5月25日（火）</p>
 								<p class="name">米子コンベンションセンター</p>
-								<p class="room">1F情報プラザ</p>
+								<p class="room">1階 情報プラザ</p>
 								<p class="address">
 									〒683-0043<br>
 									鳥取県米子市末広町294<br>
@@ -116,7 +150,7 @@
 							<div class="col-12 col-md-6 px-0 venue-box">
 								<p class="date">5月26日（水）</p>
 								<p class="name">広島県立総合体育館</p>
-								<p class="room">中会議室</p>
+								<p class="room">大会議室</p>
 								<p class="address">
 									〒730-0011<br>
 									広島県広島市中区基町4-1<br>
@@ -140,7 +174,7 @@
 							<div class="col-12 col-md-6 px-0 venue-box">
 								<p class="date">5月27日（木）</p>
 								<p class="name">松山市総合<br>コミュニティセンター</p>
-								<p class="room">3F大会議室</p>
+								<p class="room">3階 大会議室</p>
 								<p class="address">
 									〒790-0012<br>
 									愛媛県松山市湊町7-5<br>
@@ -162,7 +196,7 @@
 							<div class="col-12 col-md-6 px-0 venue-box">
 								<p class="date">5月28日（金）</p>
 								<p class="name">まなびの館ローズコム</p>
-								<p class="room">中会議室</p>
+								<p class="room">４F 大会議室</p>
 								<p class="address">
 									〒720-0812<br>
 									広島県福山市霞町1-10-1<br>

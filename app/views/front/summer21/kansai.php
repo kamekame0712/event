@@ -525,17 +525,17 @@
 					セミナー当日は、受付票を必ずご持参いただき、受付にお見せください。
 				</p>
 				<div class="apply-method-image">
-					<siv class="image-wrapper">
+					<div class="image-wrapper">
 						<img src="<?= base_url('img/summer21/how_to_apply1.png') ?>" alt="フォーム入力">
-					</siv>
+					</div>
 					<div class="arrow-triangle-right"></div>
-					<siv class="image-wrapper">
+					<div class="image-wrapper">
 						<img src="<?= base_url('img/summer21/how_to_apply2.png') ?>" alt="受付票を保存">
-					</siv>
+					</div>
 					<div class="arrow-triangle-right"></div>
-					<siv class="image-wrapper">
+					<div class="image-wrapper">
 						<img src="<?= base_url('img/summer21/how_to_apply3.png') ?>" alt="受付票を当日持参">
-					</siv>
+					</div>
 				</div>
 
 				<div class="row justify-content-center mb-5">
