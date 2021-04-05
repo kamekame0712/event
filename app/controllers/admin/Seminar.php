@@ -9,6 +9,8 @@ class Seminar extends MY_Controller
 		// モデルロード
 		$this->load->model('m_seminar_summer21', 'm_seminar');
 		$this->load->model('m_apply_seminar_summer21', 'm_apply_seminar');
+		$this->load->model('m_exhibition_detail_summer21', 'm_exhibition_detail');
+		$this->load->model('m_apply_exhibition_summer21', 'm_apply_exhibition');
 
 		// 設定ファイルロード
 		$this->config->load('config_disp', TRUE, TRUE);
@@ -28,6 +30,27 @@ class Seminar extends MY_Controller
 		);
 
 		$this->load->view('admin/seminar/index', $view_data);
+	}
+
+	public function apply_confirm($seminar_id = '')
+	{
+		// ログイン済みチェック
+		if( !$this->chk_logged_in_admin() ) {
+			redirect('admin');
+			return;
+		}
+
+		$seminar_data = $this->m_seminar->get_one(array('seminar_summer21_id' => $seminar_id));
+		$apply_data = $this->m_apply_seminar->get_list(array('seminar_summer21_id' => $seminar_id), 'regist_time ASC');
+
+		$view_data = array(
+			'CONF'	=> $this->conf,
+			'SDATA'	=> $seminar_data,
+			'ADATA'	=> $apply_data,
+			'SID'	=> $seminar_id
+		);
+
+		$this->load->view('admin/seminar/apply_confirm', $view_data);
 	}
 
 	public function dl($seminar_id = '')
@@ -230,6 +253,83 @@ class Seminar extends MY_Controller
 
 				// セミナー削除
 				$this->m_seminar->update(array('seminar_summer21_id' => $seminar_id), $update_data);
+
+				$this->db->trans_complete();
+
+				if( $this->db->trans_status() === FALSE ) {
+					$ret_val['err_msg'] = 'データベースエラーが発生しました。';
+				}
+				else {
+					$ret_val['status'] = TRUE;
+				}
+			}
+		}
+
+		$this->ajax_out(json_encode($ret_val));
+	}
+
+	// キャンセル
+	public function ajax_cancel()
+	{
+		$post_data = $this->input->post();
+		$apply_seminar_summer21_id = isset($post_data['apply_id']) ? $post_data['apply_id'] : '';
+
+		$ret_val = array(
+			'status'			=> FALSE,
+			'err_msg'			=> ''
+		);
+
+		$apply_data = $this->m_apply_seminar->get_one(array('apply_seminar_summer21_id' => $apply_seminar_summer21_id));
+		if( empty($apply_data) ) {
+			$ret_val['err_msg'] = '削除するセミナー申込情報が存在しません。';
+		}
+		else {
+			$seminar_data = $this->m_seminar->get_one(array('seminar_summer21_id' => $apply_data['seminar_summer21_id']));
+			if( empty($seminar_data) ) {
+				$ret_val['err_msg'] = '更新するセミナー情報が存在しません。';
+			}
+			else {
+				$now = date('Y-m-d H:i:s');
+
+				$this->db->trans_start();
+
+				$update_data_apply = array(
+					'update_time'	=> $now,
+					'status'		=> '9'
+				);
+				$this->m_apply_seminar->update(array('apply_seminar_summer21_id' => $apply_seminar_summer21_id), $update_data_apply);
+
+				$apply_num = empty($apply_data['guest_name2']) ? 1 : 2;
+				$new_num = intval($seminar_data['reserved']) - $apply_num;
+
+				$update_data_seminar = array(
+					'reserved'		=> $new_num,
+					'update_time'	=> $now
+				);
+				$this->m_seminar->update(array('seminar_summer21_id' => $seminar_data['seminar_summer21_id']), $update_data_seminar);
+
+				// 展示会も参加する場合はも展示会申込みも削除
+				if( $apply_data['attend_exhibition'] == '1' ) {
+					$apply_exhibition_data = $this->m_apply_exhibition->get_one(array('apply_seminar_summer21_id' => $apply_seminar_summer21_id));
+					if( !empty($apply_exhibition_data) ) {
+						$update_data_apply = array(
+							'update_time'	=> $now,
+							'status'		=> '9'
+						);
+						$this->m_apply_exhibition->update(array('apply_seminar_summer21_id' => $apply_seminar_summer21_id), $update_data_apply);
+
+						$detail_data = $this->m_exhibition_detail->get_one(array('exhibition_detail_summer21_id' => $apply_exhibition_data['exhibition_detail_summer21_id']));
+						if( !empty($detail_data) ) {
+							$new_num = intval($detail_data['reserved']) - intval($apply_exhibition_data['guest_num']);
+
+							$update_data_detail = array(
+								'reserved'		=> $new_num,
+								'update_time'	=> $now
+							);
+							$this->m_exhibition_detail->update(array('exhibition_detail_summer21_id' => $detail_data['exhibition_detail_summer21_id']), $update_data_detail);
+						}
+					}
+				}
 
 				$this->db->trans_complete();
 

@@ -11,10 +11,15 @@ jQuery( function($) {
 				return '<a href="javascript:void(0);" onclick="mod_exhibition(' + row.exhibition_id + ')">'
 					 + '<i class="fas fa-pencil-alt"></i>&nbsp;修正</a>&nbsp;&nbsp;&nbsp;'
 					 + '<a href="javascript:void(0);" onclick="del_exhibition(' + row.exhibition_id + ',\'' + row.office_id + '\',\'' + row.place_id + '\',\'' + row.event_date_data + '\')">'
-					 + '<i class="far fa-trash-alt"></i>&nbsp;削除</a>&nbsp;&nbsp;&nbsp;'
+					 + '<i class="far fa-trash-alt"></i>&nbsp;削除</a>'
+			},
+
+			'col_proc2': function(column, row) {
+				return '<a href="' + SITE_URL + 'admin/exhibition/apply_confirm/' + row.exhibition_id + '"'
+					 + '<i class="far fa-check-square"></i>&nbsp;確認</a>&nbsp;&nbsp;&nbsp;'
 					 + '<a href="' + SITE_URL + 'admin/exhibition/dl/' + row.exhibition_id + '"'
 					 + '<i class="fas fa-download"></i>&nbsp;ダウンロード</a>'
-			},
+			}
 		},
 		rowCount: [15, 30, 50, -1],
 		labels: {

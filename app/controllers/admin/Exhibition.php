@@ -249,6 +249,58 @@ class Exhibition extends MY_Controller
 		return;
 	}
 
+	public function apply_confirm($exhibition_id = '')
+	{
+		// ログイン済みチェック
+		if( !$this->chk_logged_in_admin() ) {
+			redirect('admin');
+			return;
+		}
+
+		$exhibition_data = $this->m_exhibition->get_one(array('exhibition_summer21_id' => $exhibition_id));
+		$apply_data = array();
+		$detail_data = $this->m_exhibition_detail->get_list(array('exhibition_summer21_id' => $exhibition_id), 'serial_number ASC');
+		if( !empty($detail_data) ) {
+			foreach( $detail_data as $detail_val ) {
+				if( !array_key_exists($detail_val['exhibition_detail_summer21_id'], $apply_data) ) {
+					$apply_data[$detail_val['exhibition_detail_summer21_id']] = array(
+						'serial_number'			=> $detail_val['serial_number'],
+						'exhibition_time_start'	=> $detail_val['exhibition_time_start'],
+						'exhibition_time_end'	=> $detail_val['exhibition_time_end'],
+						'reserved'				=> $detail_val['reserved'],
+						'apply'					=> array()
+					);
+				}
+
+				$wk_apply_data = $this->m_apply_exhibition->get_list(array('exhibition_detail_summer21_id' => $detail_val['exhibition_detail_summer21_id']));
+				if( !empty($wk_apply_data) ) {
+					foreach( $wk_apply_data as $apply_val ) {
+						if( !array_key_exists($apply_val['apply_exhibition_summer21_id'], $apply_data[$detail_val['exhibition_detail_summer21_id']]['apply']) ) {
+							$apply_data[$detail_val['exhibition_detail_summer21_id']]['apply'][$apply_val['apply_exhibition_summer21_id']] = array(
+								'juku_name'			=> $apply_val['juku_name'],
+								'guest_num'			=> $apply_val['guest_num'],
+								'zip'				=> $apply_val['zip'],
+								'address'			=> $apply_val['address'],
+								'tel'				=> $apply_val['tel'],
+								'email'				=> $apply_val['email'],
+								'regist_time'		=> $apply_val['regist_time'],
+							);
+						}
+					}
+				}
+			}
+		}
+
+		$view_data = array(
+			'CONF'	=> $this->conf,
+			'EDATA'	=> $exhibition_data,
+			'ADATA'	=> $apply_data,
+			'EID'	=> $exhibition_id
+		);
+
+		$this->load->view('admin/exhibition/apply_confirm', $view_data);
+	}
+
 	public function dl($exhibition_id = '')
 	{
 		// ログイン済みチェック
@@ -366,6 +418,48 @@ class Exhibition extends MY_Controller
 					$ret_val['status'] = TRUE;
 				}
 			}
+		}
+
+		$this->ajax_out(json_encode($ret_val));
+	}
+
+	// キャンセル
+	public function ajax_cancel()
+	{
+		$post_data = $this->input->post();
+		$apply_exhibition_summer21_id = isset($post_data['apply_id']) ? $post_data['apply_id'] : '';
+
+		$now = date('Y-m-d H:i:s');
+
+		$this->db->trans_start();
+
+		$apply_exhibition_data = $this->m_apply_exhibition->get_one(array('apply_exhibition_summer21_id' => $apply_exhibition_summer21_id));
+		if( !empty($apply_exhibition_data) ) {
+			$update_data_apply = array(
+				'update_time'	=> $now,
+				'status'		=> '9'
+			);
+			$this->m_apply_exhibition->update(array('apply_exhibition_summer21_id' => $apply_exhibition_summer21_id), $update_data_apply);
+
+			$detail_data = $this->m_exhibition_detail->get_one(array('exhibition_detail_summer21_id' => $apply_exhibition_data['exhibition_detail_summer21_id']));
+			if( !empty($detail_data) ) {
+				$new_num = intval($detail_data['reserved']) - intval($apply_exhibition_data['guest_num']);
+
+				$update_data_detail = array(
+					'reserved'		=> $new_num,
+					'update_time'	=> $now
+				);
+				$this->m_exhibition_detail->update(array('exhibition_detail_summer21_id' => $detail_data['exhibition_detail_summer21_id']), $update_data_detail);
+			}
+		}
+
+		$this->db->trans_complete();
+
+		if( $this->db->trans_status() === FALSE ) {
+			$ret_val['err_msg'] = 'データベースエラーが発生しました。';
+		}
+		else {
+			$ret_val['status'] = TRUE;
 		}
 
 		$this->ajax_out(json_encode($ret_val));
