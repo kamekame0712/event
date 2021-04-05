@@ -496,6 +496,14 @@ class Exhibition extends MY_Controller
 
 		if( !empty($exhibition_data) ) {
 			foreach( $exhibition_data as $val ) {
+				$guest_total = 0;
+				$wk_detail_data = $this->m_exhibition_detail->get_list(array('exhibition_summer21_id' => $val['exhibition_summer21_id']));
+				if( !empty($wk_detail_data) ) {
+					foreach( $wk_detail_data as $detail ) {
+						$guest_total += intval($detail['reserved']);
+					}
+				}
+
 				$row_val[] = array(
 					'exhibition_id'		=> $val['exhibition_summer21_id'],
 					'office_id'			=> $val['office'],
@@ -503,7 +511,8 @@ class Exhibition extends MY_Controller
 					'place_id'			=> $val['place_summer21'],
 					'place'				=> isset($this->conf['place_summer21'][$val['place_summer21']]) ? $this->conf['place_summer21'][$val['place_summer21']] : '',
 					'event_date'		=> $val['show_event_date'],
-					'event_date_data'	=> $val['event_date']
+					'event_date_data'	=> $val['event_date'],
+					'guest_total'		=> $guest_total
 				);
 			}
 		}

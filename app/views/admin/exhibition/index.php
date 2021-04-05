@@ -29,6 +29,7 @@
 														<th data-column-id="office" data-width="150px">主催オフィス</th>
 														<th data-column-id="place" data-width="80px" data-sortable="false">会場</th>
 														<th data-column-id="event_date" data-width="120px">開催日</th>
+														<th data-column-id="guest_total" data-sortable="false" data-width="100px" data-align="right">申込総数</th>
 													</tr>
 												</thead>
 											</table>
