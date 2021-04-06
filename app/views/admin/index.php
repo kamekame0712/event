@@ -43,6 +43,14 @@
 													</tr>
 
 													<tr>
+														<td><a href="<?= site_url('admin/seminar_kyushu') ?>"><i class="fas fa-list-ol"></i>&nbsp;申込状況確認（九州）</a></td>
+														<td>
+															セミナーの申し込み状況の確認が行えます。<br>
+															<span class="text-danger">※九州専用</span>
+														</td>
+													</tr>
+
+													<tr>
 														<td><a href="<?= site_url('admin/manage') ?>"><i class="fas fa-user-tie"></i>&nbsp;管理者管理</a></td>
 														<td>
 															管理者の登録、修正、削除が行えます。

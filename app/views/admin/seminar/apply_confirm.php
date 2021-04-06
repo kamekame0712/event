@@ -19,8 +19,6 @@
 								<?= $SDATA['show_event_date'] ?>
 
 								<div class="card card-primary">
-									<div class="card-header">
-									</div>
 									<div class="card-body">
 										<div class="table-responsive">
 											<?php if( empty($ADATA) ): ?>

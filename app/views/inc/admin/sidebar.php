@@ -1,10 +1,11 @@
 <?php
-	$active_seminar = $active_exhibition = $active_manage = '';
+	$active_seminar = $active_kyushu = $active_exhibition = $active_manage = '';
 
 	switch( $current ) {
-		case 'seminar':				$active_seminar = 'class="active"';				break;
-		case 'exhibition':			$active_exhibition = 'class="active"';			break;
-		case 'manage':				$active_manage = 'class="active"';				break;
+		case 'seminar':		$active_seminar = 'class="active"';		break;
+		case 'kyushu':		$active_kyushu = 'class="active"';		break;
+		case 'exhibition':	$active_exhibition = 'class="active"';	break;
+		case 'manage':		$active_manage = 'class="active"';		break;
 	}
 ?>
 
@@ -20,6 +21,7 @@
 		<ul class="sidebar-menu">
 			<li <?= $active_seminar ?>><a class="nav-link" href="<?= site_url('admin/seminar') ?>"><i class="fas fa-chalkboard-teacher"></i><span>セミナー管理</span></a></li>
 			<li <?= $active_exhibition ?>><a class="nav-link" href="<?= site_url('admin/exhibition') ?>"><i class="fas fa-book-reader"></i><span>展示会管理</span></a></li>
+			<li <?= $active_kyushu ?>><a class="nav-link" href="<?= site_url('admin/seminar_kyushu') ?>"><i class="fas fa-list-ol"></i><span>申込状況確認（九州）</span></a></li>
 			<li <?= $active_manage ?>><a class="nav-link" href="<?= site_url('admin/manage') ?>"><i class="fas fa-user-tie"></i><span>管理者管理</span></a></li>
 		</ul>
 	</aside>
