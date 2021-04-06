@@ -5,20 +5,9 @@
 
 .top-image .new-label {
 	position: absolute;
-	top: 0;
-	left: 80px;
+	bottom: -17px;
+	right: 126px;
 	width: 160px;
-    transform: rotate(-35deg);
-    z-index: 10;
-}
-
-.top-image h2 {
-	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
-	text-align: center;
-	font-size: 3.5rem;
-	font-weight: bold;
-    color: #0055A6;
-    position: relative;
     z-index: 10;
 }
 
@@ -52,12 +41,12 @@
 }
 
 .guide .guide-content {
-	padding: 60px 0 15px;
+	padding: 96px 0 15px;
 	color: #FFFFFF;
 }
 
 .guide .guide-content h3 {
-	font-size: 3.0rem;
+	font-size: 3.7rem;
 	font-weight: bold;
     text-align: center;
     color: #FFF24A;
@@ -199,13 +188,9 @@ iframe {
     }
 
     .top-image .new-label {
-        top: -65px;
-        left: -15px;
+        bottom: -50px;
+        right: 0;
         width: 100px;
-    }
-
-    .top-image h2 {
-        font-size: 2.2rem;
     }
 
     .top-image .text-list {
@@ -217,7 +202,7 @@ iframe {
     }
 
     .guide .guide-content {
-        padding-top: 40px;
+        padding-top: 85px;
     }
 
     .guide .guide-content h3 {
