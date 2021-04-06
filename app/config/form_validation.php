@@ -147,4 +147,44 @@ $config = array(
 		)
 	),
 
+	// セミナー参加申込フォーム（九州専用）
+	'apply_seminar_kyushu' => array(
+		array(
+			'field' => 'guest_num',
+			'label' => 'お申込み人数',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'juku_name',
+			'label' => '貴塾名',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'zip',
+			'label' => '郵便番号',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'address',
+			'label' => 'ご住所',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'tel',
+			'label' => '電話番号',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'email',
+			'label' => 'メールアドレス',
+			'rules' => 'required'
+		)
+	),
+
+
 );

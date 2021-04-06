@@ -48,7 +48,7 @@
 									<div class="place-limit">
 										<span class="place-name">大阪</span>会場
 										<span class="first-come">先着</span>
-										<span class="number">150</span>
+										<span class="number">140</span>
 										<span class="first-come">名</span>
 									</div>
 
@@ -137,7 +137,7 @@
 						<div class="place-limit">
 							<span class="place-name">大阪</span>会場
 							<span class="first-come">先着</span>
-							<span class="number">150</span>
+							<span class="number">140</span>
 							<span class="first-come">名</span>
 						</div>
 
@@ -445,7 +445,7 @@
 					</div>
 				</div> <!-- end of .row -->
 			</section> <!-- end of KOBE/HIMEJI -->
-		</div>
+		</div> <!-- end of .container -->
 
 		<section>
 			<div class="measures">

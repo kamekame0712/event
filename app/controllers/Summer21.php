@@ -11,6 +11,7 @@ class Summer21 extends MY_Controller
 		$this->load->model('m_exhibition_summer21', 'm_exhibition');
 		$this->load->model('m_exhibition_detail_summer21', 'm_exhibition_detail');
 		$this->load->model('m_apply_seminar_summer21', 'm_apply_seminar');
+		$this->load->model('m_apply_seminar_summer21_kyushu', 'm_apply_kyushu');
 		$this->load->model('m_apply_exhibition_summer21', 'm_apply_exhibition');
 		$this->load->model('m_mail');
 
@@ -37,7 +38,11 @@ class Summer21 extends MY_Controller
 
 	public function kyushu()
 	{
-		$this->load->view('front/summer21/kyushu');
+		$view_data = array(
+			'RESERVED'	=> $this->m_apply_kyushu->get_sum('guest_num')
+		);
+
+		$this->load->view('front/summer21/kyushu', $view_data);
 	}
 
 	public function apply_seminar($office = '')
@@ -82,6 +87,14 @@ class Summer21 extends MY_Controller
 				}
 
 				break;
+
+			case 'kyushu':
+				$view_file = 'front/summer21/apply_seminar_kyushu';
+				$remain_seminar = '';
+				$remain_exhibition = '';
+				break;
+
+
 			default:
 				redirect('errors/error_404');
 				return;
@@ -555,6 +568,77 @@ class Summer21 extends MY_Controller
 		}
 
 		$pdf->Output();
+	}
+
+	public function confirm_seminar_kyushu()
+	{
+		// リロード対策
+		if( $this->input->cookie('apply_seminar') ) {
+			delete_cookie('apply_seminar');
+		}
+
+		$post_data = $this->input->post();
+
+		// バリデーションチェック
+		if( $this->form_validation->run('apply_seminar_kyushu') == FALSE ) {
+			$this->apply_seminar('kyushu');
+			return;
+		}
+
+		$view_data = array(
+			'PDATA'	=> $post_data
+		);
+
+		$this->load->view('front/summer21/apply_seminar_confirm_kyushu', $view_data);
+	}
+
+	public function complete_seminar_kyushu()
+	{
+		$post_data = $this->input->post();
+		$guest_num = isset($post_data['guest_num']) ? $post_data['guest_num'] : '';
+		$juku_name = isset($post_data['juku_name']) ? $post_data['juku_name'] : '';
+		$zip = isset($post_data['zip']) ? $post_data['zip'] : '';
+		$address = isset($post_data['address']) ? $post_data['address'] : '';
+		$tel = isset($post_data['tel']) ? $post_data['tel'] : '';
+		$email = isset($post_data['email']) ? $post_data['email'] : '';
+
+		// リロード対策
+		if( $this->input->cookie('apply_seminar') ) {
+			redirect('summer21/kyushu');
+		}
+		else {
+			$cookie_data = array(
+				'name'	=> 'apply_seminar',
+				'value'	=> '1',
+				'expire'=> '86400'
+			);
+			$this->input->set_cookie($cookie_data);
+		}
+
+		$err_str = '';
+		$now = date('Y-m-d H:i:s');
+
+		$insert_data = array(
+			'guest_num'		=> $guest_num,
+			'juku_name'		=> $juku_name,
+			'zip'			=> $zip,
+			'address'		=> $address,
+			'tel'			=> $tel,
+			'email'			=> $email,
+			'regist_time'	=> $now,
+			'update_time'	=> $now,
+			'status'		=> '0'
+		);
+
+		if( !$this->m_apply_kyushu->insert($insert_data) ) {
+			$err_str = 'データベースエラーが発生しました。';
+		}
+
+		$view_data = array(
+			'ERR_STR'	=> $err_str
+		);
+
+		$this->load->view('front/summer21/apply_seminar_complete_kyushu', $view_data);
 	}
 
 	public function apply_exhibition($office = '')

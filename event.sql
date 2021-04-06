@@ -44,6 +44,21 @@ CREATE TABLE `t_apply_seminar_summer21` (
   PRIMARY KEY (apply_seminar_summer21_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_apply_seminar_summer21_kyushu` (
+  `apply_seminar_summer21_kyushu_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `guest_num` int DEFAULT 0 COMMENT '参加人数',
+  `juku_name` varchar(128) NOT NULL COMMENT '塾名',
+  `zip` varchar(8) NOT NULL COMMENT '郵便番号',
+  `address` varchar(256) NOT NULL COMMENT '住所',
+  `tel` varchar(16) NOT NULL COMMENT '電話番号',
+  `email` varchar(256) DEFAULT NULL COMMENT 'メールアドレス',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (apply_seminar_summer21_kyushu_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `t_exhibition_summer21` (
   `exhibition_summer21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `office` varchar(1) NOT NULL COMMENT '主催オフィス（config値）',

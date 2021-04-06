@@ -16,7 +16,7 @@
 			セミナーの参加申し込みを受け付けております。<br>
 			ご希望の会場（日程）をお選びいただき、必要事項をご入力の上、「入力内容の確認画面へ」をクリックしてください。
 
-			<?php echo form_open('summer21/confirm_seminar', array('id' => 'frm_apply_kansai')); ?>
+			<?php echo form_open('summer21/confirm_seminar'); ?>
 				<?php echo form_hidden('office', $OFFICE); ?>
 
 				<div class="form-box">
@@ -24,68 +24,84 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php if( $REMAIN_SEMINAR['7'] > 0 ): ?>
-									<?php echo form_radio(array(
-										'name'	=> 'place',
-										'id'	=> 'place7',
-										'value'	=> '7',
-										'checked'	=> set_checkbox('place', '7', FALSE)
-									)); ?>
-									<?php echo form_label('大阪会場［６月１日（火）］', 'place7', array('class' => 'for-radio place-label')); ?>
-								<?php else: ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-28') ): ?>
 									<p class="full-capacity">大阪会場［６月１日（火）］</p>
-									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
-									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php else: ?>
+									<?php if( $REMAIN_SEMINAR['7'] > 0 ): ?>
+										<?php echo form_radio(array(
+											'name'	=> 'place',
+											'id'	=> 'place7',
+											'value'	=> '7',
+											'checked'	=> set_checkbox('place', '7', FALSE)
+										)); ?>
+										<?php echo form_label('大阪会場［６月１日（火）］', 'place7', array('class' => 'for-radio place-label')); ?>
+									<?php else: ?>
+										<p class="full-capacity">大阪会場［６月１日（火）］</p>
+										<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+										<span class="full-capacity-info for-sp-ib">※満席</span>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 
 							<div class="col-12 col-md-6">
-								<?php if( $REMAIN_SEMINAR['8'] > 0 ): ?>
-									<?php echo form_radio(array(
-										'name'	=> 'place',
-										'id'	=> 'place8',
-										'value'	=> '8',
-										'checked'	=> set_checkbox('place', '8', FALSE)
-									)); ?>
-									<?php echo form_label('京都会場［６月２日（水）］', 'place8', array('class' => 'for-radio place-label')); ?>
-								<?php else: ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-29') ): ?>
 									<p class="full-capacity">京都会場［６月２日（水）］</p>
-									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
-									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php else: ?>
+									<?php if( $REMAIN_SEMINAR['8'] > 0 ): ?>
+										<?php echo form_radio(array(
+											'name'	=> 'place',
+											'id'	=> 'place8',
+											'value'	=> '8',
+											'checked'	=> set_checkbox('place', '8', FALSE)
+										)); ?>
+										<?php echo form_label('京都会場［６月２日（水）］', 'place8', array('class' => 'for-radio place-label')); ?>
+									<?php else: ?>
+										<p class="full-capacity">京都会場［６月２日（水）］</p>
+										<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+										<span class="full-capacity-info for-sp-ib">※満席</span>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->
 
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php if( $REMAIN_SEMINAR['9'] > 0 ): ?>
-									<?php echo form_radio(array(
-										'name'	=> 'place',
-										'id'	=> 'place9',
-										'value'	=> '9',
-										'checked'	=> set_checkbox('place', '9', FALSE)
-									)); ?>
-									<?php echo form_label('神戸会場［６月３日（木）］', 'place9', array('class' => 'for-radio place-label')); ?>
-								<?php else: ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-30') ): ?>
 									<p class="full-capacity">神戸会場［６月３日（木）］</p>
-									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
-									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php else: ?>
+									<?php if( $REMAIN_SEMINAR['9'] > 0 ): ?>
+										<?php echo form_radio(array(
+											'name'	=> 'place',
+											'id'	=> 'place9',
+											'value'	=> '9',
+											'checked'	=> set_checkbox('place', '9', FALSE)
+										)); ?>
+										<?php echo form_label('神戸会場［６月３日（木）］', 'place9', array('class' => 'for-radio place-label')); ?>
+									<?php else: ?>
+										<p class="full-capacity">神戸会場［６月３日（木）］</p>
+										<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+										<span class="full-capacity-info for-sp-ib">※満席</span>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 
 							<div class="col-12 col-md-6">
-								<?php if( $REMAIN_SEMINAR['10'] > 0 ): ?>
-									<?php echo form_radio(array(
-										'name'	=> 'place',
-										'id'	=> 'place10',
-										'value'	=> '10',
-										'checked'	=> set_checkbox('place', '10', FALSE)
-									)); ?>
-									<?php echo form_label('姫路会場［６月４日（金）］', 'place10', array('class' => 'for-radio place-label')); ?>
-								<?php else: ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-31') ): ?>
 									<p class="full-capacity">姫路会場［６月４日（金）］</p>
-									<span class="full-capacity-info for-pc-ib">※満席になりました</span>
-									<span class="full-capacity-info for-sp-ib">※満席</span>
+								<?php else: ?>
+									<?php if( $REMAIN_SEMINAR['10'] > 0 ): ?>
+										<?php echo form_radio(array(
+											'name'	=> 'place',
+											'id'	=> 'place10',
+											'value'	=> '10',
+											'checked'	=> set_checkbox('place', '10', FALSE)
+										)); ?>
+										<?php echo form_label('姫路会場［６月４日（金）］', 'place10', array('class' => 'for-radio place-label')); ?>
+									<?php else: ?>
+										<p class="full-capacity">姫路会場［６月４日（金）］</p>
+										<span class="full-capacity-info for-pc-ib">※満席になりました</span>
+										<span class="full-capacity-info for-sp-ib">※満席</span>
+									<?php endif; ?>
 								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->

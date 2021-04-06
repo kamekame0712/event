@@ -1,0 +1,495 @@
+h2.lead-title {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+	font-size: 2.2rem;
+	font-weight: bold;
+}
+
+h1.main-title {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+	font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 4.8rem;
+}
+
+.detail-box {
+    border: 2px solid #FFF24A;
+    padding: 0;
+    margin: 8px 0 30px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.detail-box dl {
+    margin: 20px;
+}
+
+.detail-box dl::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.detail-box dl dt {
+    width: 70px;
+    text-align: center;
+    background-color: #FFF24A;
+    color: #0055A6;
+    float: left;
+}
+
+.detail-box dl dt.speaker {
+    margin-top: 3px;
+}
+
+.detail-box dl dt.date {
+    margin-top: 12px;
+}
+
+.detail-box dl dd {
+    padding-left: 80px;
+    margin-bottom: 20px;
+}
+
+.detail-box dl dd .corporation {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 2.0rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.detail-box dl dd .speaker {
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
+    font-size: 2.0rem;
+    font-weight: bold;
+    margin: 0 0 0 30px;
+}
+
+.detail-box dl dd .date {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.detail-box dl dd .week {
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.detail-box .description {
+    margin: 20px;
+}
+
+.detail-box .image-box {
+    position: relative;
+    height: 215px;
+}
+
+.detail-box .image-box .text1,
+.detail-box .image-box .text2 {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 120px;
+    box-shadow: 2px 2px 6px #666666;
+}
+
+.detail-box .image-box .text1 {
+    transform: translateX(-100%) rotate(-13deg);
+}
+
+.detail-box .image-box .text2 {
+    transform: rotate(13deg);
+}
+
+.detail-box .introduction {
+    text-align: center;
+    background-color: #FFF24A;
+    color: #0055A6;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 6px 15px;
+}
+
+.detail-box .introduce-speaker {
+    margin: 0 20px 10px 0;
+    font-size: 1.4rem;
+}
+
+.detail-box .limit-num {
+    background-color: #FFF24A;
+    text-align: center;
+    font-size: 2.0rem;
+    padding: 10px 0;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+    font-weight: bold;
+}
+
+.detail-box .limit-num .limit {
+    font-size: 1.6rem;
+    background-color: #FFFFFF;
+    color: #0055A6;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 2px 10px;
+}
+
+.detail-box .limit-num .number {
+    font-size: 3.5rem;
+    letter-spacing: -1.0rem;
+    text-shadow:
+        #FFFFFF 2px 0px,  #FFFFFF -2px 0px,
+        #FFFFFF 0px -2px, #FFFFFF 0px 2px,
+        #FFFFFF 2px 2px , #FFFFFF -2px 2px,
+        #FFFFFF 2px -2px, #FFFFFF -2px -2px,
+        #FFFFFF 1px 2px,  #FFFFFF -1px 2px,
+        #FFFFFF 1px -2px, #FFFFFF -1px -2px,
+        #FFFFFF 2px 1px,  #FFFFFF -2px 1px,
+        #FFFFFF 2px -1px, #FFFFFF -2px -1px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.measures {
+    background:
+        linear-gradient(-160deg, #FFF24A 6px, transparent 0),
+        linear-gradient(160deg, #FFF24A 6px, #0055A6 0);
+    background-color: #FFF24A;
+    background-size: 25px 6px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    margin-bottom: 0;
+}
+
+.measures .measures-content {
+    padding: 15px;
+}
+
+.measures .measures-content .description {
+    text-align: center;
+    font-weight: bold;
+    color: #0055A6;
+    text-shadow:
+        #FFFFFF 1px 1px 0, #FFFFFF -1px -1px 0,/*右下、左上*/
+        #FFFFFF -1px 1px 0, #FFFFFF 1px -1px 0,/*右上、左下*/
+        #FFFFFF 0px 1px 0, #FFFFFF  0-1px 0,/*右、左*/
+        #FFFFFF -1px 0 0, #FFFFFF 1px 0 0;/*上、下*/
+}
+
+.measures .measures-content .note {
+    font-size: small;
+}
+
+.measures .measures-content .measures-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.measures .measures-content .measures-list .image-wrapper {
+    padding: 0 10px;
+}
+
+.lineup {
+    background-color: #0055A6;
+    margin-bottom: 50px;
+}
+
+.lineup .lineup-content {
+    padding: 15px 60px;
+    position: relative;
+}
+
+.lineup .lineup-content img.new-label {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    width: 175px;
+}
+
+.lineup .lineup-content .lineup-lead {
+    text-align: center;
+}
+
+.lineup .lineup-content .lineup-lead .venue-arrow {
+    display: inline-block;
+    background-color: #FFF24A;
+    padding: 3px 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+.lineup .lineup-content .lineup-lead .venue-arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -17px;
+    left: 12px;
+    width: 0;
+    height: 0;
+    border-top: 18px solid #FFF24A;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.lineup .lineup-content .lineup-lead .lead {
+    display: inline-block;
+    color: #FFF24A;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.lineup .lineup-content h3 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.lineup .lineup-content .note {
+    font-size: small;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.lineup .lineup-content .text-list {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.lineup .lineup-content .text-list .image-wrapper {
+    width: 120px;
+    margin: 0 10px;
+}
+
+.venue-name {
+    background-color: #FFF24A;
+    color: #0055A6;
+    font-weight: bold;
+    font-size: 1.9rem;
+    display: inline-block;
+    padding: 1px 5px;
+}
+
+.event-date {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.place-name {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.room {
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin: 0 0 0 2.0rem;
+}
+
+iframe {
+    width: 100%;
+}
+
+.info-apply-method {
+    margin: 20px 40px;
+}
+
+.apply-method-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.apply-method-image .image-wrapper {
+    max-width: 165px;
+}
+
+dl.event-info {
+    margin: 0 0 40px 40px;
+}
+
+dl.event-info::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+dl.event-info dt {
+    width: 60px;
+    margin-top: 4px;
+    text-align: center;
+    background-color: #FFF24A;
+    color: #0055A6;
+    float: left;
+}
+
+dl.event-info dd {
+    padding-left: 80px;
+    margin-bottom: 10px;
+    font-size: 2.0rem;
+}
+
+dl.event-info dd span {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+@media screen and (max-width : 768px) {
+    h2.lead-title {
+        font-size: 1.6rem;
+    }
+
+    h1.main-title {
+        font-size: 2.3rem;
+        line-height: 3.0rem;
+    }
+
+    .detail-box {
+        margin: 8px 0 20px;
+    }
+
+    .detail-box dl {
+        margin: 20px 0;
+    }
+
+    .detail-box dl dt.date {
+        margin-top: 9px;
+    }
+
+    .detail-box dl dd .corporation {
+        font-size: 1.7rem;
+    }
+
+    .detail-box dl dd .speaker {
+        font-size: 1.7rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .detail-box dl dd .date {
+        font-size: 2.5rem;
+    }
+
+    .detail-box dl dd .week {
+        font-size: 1.8rem;
+    }
+
+    .detail-box .description {
+        margin: 20px 0;
+    }
+
+    .detail-box .image-box {
+        position: relative;
+        height: 170px;
+    }
+
+    .detail-box .image-box .text1,
+    .detail-box .image-box .text2 {
+        top: 0;
+        width: 100px;
+    }
+
+    .detail-box .introduction {
+        font-size: 1.4rem;
+        padding: 4px 10px;
+        margin-left: 15px;
+    }
+
+    .detail-box .introduce-speaker {
+        margin: 0 20px 10px;
+    }
+
+    .measures .measures-content .measures-list {
+        display: block;
+        text-align: center;
+    }
+
+    .measures .measures-content .measures-list .image-wrapper {
+        display: inline-block;
+        padding: 0;
+    }
+
+    .measures .measures-content .measures-list .narrow {
+        width: 70px;
+        margin: 5px;
+    }
+
+    .measures .measures-content .measures-list .wide {
+        width: 140px;
+    }
+
+    .lineup {
+        margin-bottom: 30px;
+    }
+
+    .lineup .lineup-content {
+        padding: 15px;
+    }
+
+    .lineup .lineup-content img.new-label {
+        width: 85px;
+        top: auto;
+        bottom: 60px;
+        right: 0;
+    }
+
+    .lineup .lineup-content .lead {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .lineup .lineup-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .event-date {
+        font-size: 1.9rem;
+    }
+
+    .place-name {
+        font-size: 1.6rem;
+    }
+
+    .room {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .info-apply-method {
+        margin: 10px 15px 20px;
+    }
+
+    .apply-method-image {
+        margin-bottom: 20px;
+    }
+
+    dl.event-info {
+        margin: 0 0 0px 0;
+    }
+
+    dl.event-info dt {
+        margin-top: 2px;
+    }
+
+    dl.event-info dd {
+        padding-left: 70px;
+        font-size: 1.6rem;
+    }
+
+    dl.event-info dd span {
+        font-size: 1.4rem;
+        display: block;
+        margin-left: 0;
+    }
+}

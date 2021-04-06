@@ -24,57 +24,77 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place6',
-									'value'	=> '6',
-									'checked'	=> set_checkbox('place', '6', FALSE)
-								)); ?>
-								<?php echo form_label('米子会場［５月２５日（火）］', 'place6', array('class' => 'for-radio place-label')); ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-21') ): ?>
+									<p class="full-capacity">米子会場［５月２５日（火）］</p>
+								<?php else: ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place6',
+										'value'	=> '6',
+										'checked'	=> set_checkbox('place', '6', FALSE)
+									)); ?>
+									<?php echo form_label('米子会場［５月２５日（火）］', 'place6', array('class' => 'for-radio place-label')); ?>
+								<?php endif; ?>
 							</div>
 
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place2',
-									'value'	=> '2',
-									'checked'	=> set_checkbox('place', '2', FALSE)
-								)); ?>
-								<?php echo form_label('広島会場［５月２６日（水）］', 'place2', array('class' => 'for-radio place-label')); ?>
-							</div>
-						</div> <!-- end of .row -->
-
-						<div class="row">
-							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place4',
-									'value'	=> '4',
-									'checked'	=> set_checkbox('place', '4', FALSE)
-								)); ?>
-								<?php echo form_label('松山会場［５月２７日（木）］', 'place4', array('class' => 'for-radio place-label')); ?>
-							</div>
-
-							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place5',
-									'value'	=> '5',
-									'checked'	=> set_checkbox('place', '5', FALSE)
-								)); ?>
-								<?php echo form_label('福山会場［５月２８日（金）］', 'place5', array('class' => 'for-radio place-label')); ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-22') ): ?>
+									<p class="full-capacity">広島会場［５月２６日（水）］</p>
+								<?php else: ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place2',
+										'value'	=> '2',
+										'checked'	=> set_checkbox('place', '2', FALSE)
+									)); ?>
+									<?php echo form_label('広島会場［５月２６日（水）］', 'place2', array('class' => 'for-radio place-label')); ?>
+								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->
 
 						<div class="row">
 							<div class="col-12 col-md-6">
-								<?php echo form_radio(array(
-									'name'	=> 'place',
-									'id'	=> 'place3',
-									'value'	=> '3',
-									'checked'	=> set_checkbox('place', '3', FALSE)
-								)); ?>
-								<?php echo form_label('岡山会場［５月３１日（月）］', 'place3', array('class' => 'for-radio place-label')); ?>
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-23') ): ?>
+									<p class="full-capacity">松山会場［５月２７日（木）］</p>
+								<?php else: ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place4',
+										'value'	=> '4',
+										'checked'	=> set_checkbox('place', '4', FALSE)
+									)); ?>
+									<?php echo form_label('松山会場［５月２７日（木）］', 'place4', array('class' => 'for-radio place-label')); ?>
+								<?php endif; ?>
+							</div>
+
+							<div class="col-12 col-md-6">
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-24') ): ?>
+									<p class="full-capacity">福山会場［５月２８日（金）］</p>
+								<?php else: ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place5',
+										'value'	=> '5',
+										'checked'	=> set_checkbox('place', '5', FALSE)
+									)); ?>
+									<?php echo form_label('福山会場［５月２８日（金）］', 'place5', array('class' => 'for-radio place-label')); ?>
+								<?php endif; ?>
+							</div>
+						</div> <!-- end of .row -->
+
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<?php if( strtotime(date('Y-m-d')) > strtotime('2021-05-27') ): ?>
+									<p class="full-capacity">岡山会場［５月３１日（月）］</p>
+								<?php else: ?>
+									<?php echo form_radio(array(
+										'name'	=> 'place',
+										'id'	=> 'place3',
+										'value'	=> '3',
+										'checked'	=> set_checkbox('place', '3', FALSE)
+									)); ?>
+									<?php echo form_label('岡山会場［５月３１日（月）］', 'place3', array('class' => 'for-radio place-label')); ?>
+								<?php endif; ?>
 							</div>
 						</div> <!-- end of .row -->
 

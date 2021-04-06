@@ -41,7 +41,7 @@ class MY_model extends CI_Model
 
 	/**
 	 * レコード更新
-	 * 
+	 *
 	 * @param string $where    : 更新条件の連想配列
 	 * @param string $params   : 更新情報の連想配列
 	 * @access public
@@ -106,7 +106,7 @@ class MY_model extends CI_Model
 
 	/**
 	 * レコード単一取得
-	 * 
+	 *
 	 * @param	$where		検索条件
 	 * @return				単一レコードの連想配列
 	 */
@@ -118,7 +118,7 @@ class MY_model extends CI_Model
 
 	/**
 	 * レコード件数取得
-	 * 
+	 *
 	 * @param	$params		検索条件
 	 * @param	is_status	TRUE:status='0'を条件に付加
 	 *
@@ -144,8 +144,48 @@ class MY_model extends CI_Model
 	}
 
 	/**
+	 * 合計値取得
+	 *
+	 * @param	$col		合計値を求めるカラム名
+	 * @param	$params		検索条件
+	 * @param	is_status	TRUE:status='0'を条件に付加
+	 *
+	 * @return				合計値
+	 */
+	public function get_sum($col = '', $params = '', $is_status = TRUE)
+	{
+		if( $col == '' ) {
+			return FALSE;
+		}
+
+		$this->db->from(static::TBL)->select_sum($col, 'sum');
+
+		if( !empty($params) ) {
+			$this->db->where($params);
+		}
+
+		if( ( !isset($params['status']) && !isset($params['status !=']) && !isset($params['status <']) && !isset($params['status <=']) && !isset($params['status >']) && !isset($params['status >=']) ) && $is_status ) {
+			// statusがある時のみ実行
+			if( $this->db->field_exists('status', static::TBL) ) {
+				$this->db->where('status', '0');
+			}
+		}
+
+		$query = $this->db->get();
+		$query->num_rows();
+
+		if( $query->num_rows() > 0 ) {
+			$wk = $query->row_array();
+			return $wk['sum'];
+		}
+		else {
+			return '0';
+		}
+	}
+
+	/**
 	 * 最大値取得
-	 * 
+	 *
 	 * @param	$col		最大値を求めるカラム名
 	 * @param	$params		検索条件
 	 * @param	is_status	TRUE:status='0'を条件に付加
@@ -185,7 +225,7 @@ class MY_model extends CI_Model
 
 	/**
 	 * 最小値取得
-	 * 
+	 *
 	 * @param	$col		最小値を求めるカラム名
 	 * @param	$params		検索条件
 	 * @param	is_status	TRUE:status='0'を条件に付加
