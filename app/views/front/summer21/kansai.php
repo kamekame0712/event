@@ -478,6 +478,14 @@
 							※展示会開催前に、主催のスタッフを対象にＰＣＲ検査を行います。
 							各会場は、陰性が確認されたスタッフのみ参加いたします。
 						</p>
+
+						<div class="attention-cancel">
+							<h1><i class="fas fa-exclamation-triangle"></i>ご注意</h1>
+
+							新型コロナウィルス感染症拡大防止の観点から、セミナーを中止・延期する場合がございます。
+							各会場の開催状況については、当サイト上で随時お知らせいたします。
+							ご確認の程、よろしくお願いいたします。
+						</div>
 					</div> <!-- end of .measures-content -->
 				</div> <!-- end of container -->
 			</div> <!-- end of .measures -->

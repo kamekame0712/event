@@ -6,7 +6,7 @@
 
 		<div class="container">
 			<h2 class="lead-title">中学校の教科書改訂を受けて、プレミアムセミナーを開催！</h2>
-			<h1 class="main-title">超難化した<br>中学英語の指導について考える</h1>
+			<h1 class="main-title">超難化した<br class="for-sp">中学英語の指導について考える</h1>
 
 			<div class="detail-box">
 				<div class="container-fluid">
@@ -85,7 +85,7 @@
 								<img src="<?= base_url('img/summer21/measures4.png') ?>" alt="感染対策">
 							</div>
 							<div class="image-wrapper wide">
-								<img src="<?= base_url('img/summer21/measures5.png') ?>" alt="感染対策">
+								<img src="<?= base_url('img/summer21/measures8.png') ?>" alt="感染対策">
 							</div>
 						</div>
 

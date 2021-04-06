@@ -1,15 +1,15 @@
 .top-image {
 	position: relative;
 	padding: 20px 0;
-	min-height: 150px;
 }
 
 .top-image .new-label {
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 175px;
-	transform: rotate(-35deg)
+	left: 80px;
+	width: 160px;
+    transform: rotate(-35deg);
+    z-index: 10;
 }
 
 .top-image h2 {
@@ -17,7 +17,26 @@
 	text-align: center;
 	font-size: 3.5rem;
 	font-weight: bold;
-	color: #0055A6;
+    color: #0055A6;
+    position: relative;
+    z-index: 10;
+}
+
+.top-image .text-list {
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.top-image .text-list .image-wrapper {
+    width: 120px;
+    margin: 0 10px;
+}
+
+.top-image .text-list .image-wrapper img {
+    box-shadow: 2px 2px 6px #666666;
 }
 
 .guide {
@@ -27,7 +46,8 @@
 	background-color: #0055A6;
 	background-size: 25px 6px;
 	background-repeat: repeat-x;
-	background-position: bottom;
+    background-position: bottom;
+    margin-top: -60px;
 	margin-bottom: 0;
 }
 
@@ -174,6 +194,32 @@ iframe {
 }
 
 @media screen and (max-width : 768px) {
+    .top-image {
+        padding: 0;
+    }
+
+    .top-image .new-label {
+        top: -65px;
+        left: -15px;
+        width: 100px;
+    }
+
+    .top-image h2 {
+        font-size: 2.2rem;
+    }
+
+    .top-image .text-list {
+        margin: 0;
+    }
+
+    .guide {
+        margin-top: -30px;
+    }
+
+    .guide .guide-content {
+        padding-top: 40px;
+    }
+
     .guide .guide-content h3 {
         font-size: 2.5rem;
     }

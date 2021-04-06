@@ -9,6 +9,24 @@
 				<div class="top-image">
 					<img src="<?= base_url('img/summer21/new.png') ?>" alt="改訂・新版多数" class="new-label">
 					<h2>2021年は中学校教科書改訂年度！</h2>
+
+					<div class="text-list">
+						<div class="image-wrapper">
+							<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+						</div>
+						<div class="image-wrapper">
+							<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+						</div>
+						<div class="image-wrapper">
+							<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+						</div>
+						<div class="image-wrapper">
+							<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+						</div>
+						<div class="image-wrapper">
+							<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+						</div>
+					</div>
 				</div> <!-- end of .top-image -->
 			</div> <!-- end of container -->
 
