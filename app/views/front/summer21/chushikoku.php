@@ -7,7 +7,7 @@
 		<section>
 			<div class="container">
 				<div class="top-image">
-					<img src="<?= base_url('img/summer21/new.png') ?>" alt="改訂・新版多数" class="new-label">
+					<img src="<?= base_url('img/summer21/new.png') ?>" alt="改訂・新版多数" class="new-label for-pc">
 
 					<div class="text-list">
 						<div class="image-wrapper">
