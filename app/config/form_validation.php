@@ -162,6 +162,12 @@ $config = array(
 		),
 
 		array(
+			'field' => 'charge',
+			'label' => 'お申込担当者名',
+			'rules' => 'required'
+		),
+
+		array(
 			'field' => 'zip',
 			'label' => '郵便番号',
 			'rules' => 'required'

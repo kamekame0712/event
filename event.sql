@@ -47,6 +47,7 @@ CREATE TABLE `t_apply_seminar_summer21` (
 CREATE TABLE `t_apply_seminar_summer21_kyushu` (
   `apply_seminar_summer21_kyushu_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `guest_num` int DEFAULT 0 COMMENT '参加人数',
+  `charge` varchar(64) NOT NULL COMMENT 'お申込担当者名',
   `juku_name` varchar(128) NOT NULL COMMENT '塾名',
   `zip` varchar(8) NOT NULL COMMENT '郵便番号',
   `address` varchar(256) NOT NULL COMMENT '住所',

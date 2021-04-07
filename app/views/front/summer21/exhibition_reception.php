@@ -61,6 +61,10 @@
 					</div>
 				</div> <!-- end of .row -->
 			</div> <!-- end of .container-fluid -->
+
+			<div class="anchor-to-back">
+				<a href="<?= site_url('summer21/' . $O_NAME) ?>">トップに戻る</a>
+			</div>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>

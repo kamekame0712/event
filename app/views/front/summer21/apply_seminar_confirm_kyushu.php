@@ -41,6 +41,9 @@
 					<dt class="item-title">貴塾名</dt>
 					<dd><?= $PDATA['juku_name'] ?></dd>
 
+					<dt class="item-title">お申込担当者名</dt>
+					<dd><?= $PDATA['charge'] ?>&nbsp;様</dd>
+
 					<dt class="item-title">郵便番号</dt>
 					<dd><?= $PDATA['zip'] ?></dd>
 

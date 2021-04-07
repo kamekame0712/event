@@ -16,4 +16,11 @@ $config['mail'] = array(
 		'from_name'	=> 'セミナー・展示会参加申込フォーム'
 	),
 
+	// 参加申込フォームから関西営業へ
+	'apply_comp_to_kansai' => array(
+		'from'		=> 'info@chuoh-kyouiku.co.jp',
+		'from_name'	=> 'セミナー・展示会 管理画面',
+		'to'		=> 's-kamei@chuoh-kyouiku.co.jp;kamekame0712@gmail.com;kame_5131@yahoo.co.jp'
+	),
+
 );

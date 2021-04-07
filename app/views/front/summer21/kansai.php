@@ -502,19 +502,22 @@
 
 						<div class="text-list">
 							<div class="image-wrapper">
-								<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+								<img src="<?= base_url('img/summer21/text01.jpg') ?>" alt="夏期テキスト">
 							</div>
 							<div class="image-wrapper">
-								<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+								<img src="<?= base_url('img/summer21/text02.jpg') ?>" alt="夏期テキスト">
 							</div>
 							<div class="image-wrapper">
-								<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+								<img src="<?= base_url('img/summer21/text03.jpg') ?>" alt="夏期テキスト">
 							</div>
 							<div class="image-wrapper">
-								<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+								<img src="<?= base_url('img/summer21/text04.jpg') ?>" alt="夏期テキスト">
 							</div>
 							<div class="image-wrapper">
-								<img src="<?= base_url('img/summer21/text_image1.png') ?>" alt="夏期テキスト">
+								<img src="<?= base_url('img/summer21/text05.jpg') ?>" alt="夏期テキスト">
+							</div>
+							<div class="image-wrapper">
+								<img src="<?= base_url('img/summer21/text07.jpg') ?>" alt="夏期テキスト">
 							</div>
 						</div>
 					</div> <!-- end of .lineup-content -->

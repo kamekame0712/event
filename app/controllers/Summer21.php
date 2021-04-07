@@ -379,6 +379,28 @@ class Summer21 extends MY_Controller
 			);
 
 			$this->m_mail->send($params);
+
+			// 関西は営業にもメールでお知らせ
+			if( $office == 'kansai' ) {
+				$mail_data = array(
+					'ADATA'		=> $insert_data_apply_seminar,
+					'TITLE'		=> $title,
+					'AREA'		=> $area,
+					'EX'		=> $exhibition,
+					'EX_TIME'	=> $exhibition_time
+				);
+				$mail_body = $this->load->view('mail/tmpl_apply_seminar_to_admin', $mail_data, TRUE);
+
+				$params = array(
+					'from'		=> $this->conf_mail['apply_comp_to_kansai']['from'],
+					'from_name'	=> $this->conf_mail['apply_comp_to_kansai']['from_name'],
+					'to'		=> $this->conf_mail['apply_comp_to_kansai']['to'],
+					'subject'	=> 'セミナーへの申込みがありました',
+					'message'	=> $mail_body
+				);
+
+				$this->m_mail->send($params);
+			}
 		}
 
 		$view_data = array(
@@ -428,6 +450,7 @@ class Summer21 extends MY_Controller
 				$title = '安河内 哲也氏「今の子どもたちに必要な英語とは」';
 				$area = '大阪会場［６月１日（火）］';
 				$period = '11:00～12:30';
+				$office = 'kansai';
 				break;
 
 			case '8':
@@ -435,6 +458,7 @@ class Summer21 extends MY_Controller
 				$title = '安河内 哲也氏「今の子どもたちに必要な英語とは」';
 				$area = '京都会場［６月２日（水）］';
 				$period = '11:00～12:30';
+				$office = 'kansai';
 				break;
 
 			case '9':
@@ -442,6 +466,7 @@ class Summer21 extends MY_Controller
 				$title = '向井 菜穂子氏「新学習指導要領に伴う英語教育改革」';
 				$area = '神戸会場［６月３日（木）］';
 				$period = '11:00～12:40';
+				$office = 'kansai';
 				break;
 
 			case '10':
@@ -449,6 +474,7 @@ class Summer21 extends MY_Controller
 				$title = '向井 菜穂子氏「新学習指導要領に伴う英語教育改革」';
 				$area = '姫路会場［６月４日（金）］';
 				$period = '11:00～12:40';
+				$office = 'kansai';
 				break;
 		}
 
@@ -468,7 +494,8 @@ class Summer21 extends MY_Controller
 			'AREA'		=> $area,
 			'PERIOD'	=> $period,
 			'EX'		=> $exhibition,
-			'EX_TIME'	=> $exhibition_time
+			'EX_TIME'	=> $exhibition_time,
+			'OFFICE'	=> $office
 		);
 
 		$this->load->view('front/summer21/seminar_reception', $view_data);
@@ -597,6 +624,7 @@ class Summer21 extends MY_Controller
 		$post_data = $this->input->post();
 		$guest_num = isset($post_data['guest_num']) ? $post_data['guest_num'] : '';
 		$juku_name = isset($post_data['juku_name']) ? $post_data['juku_name'] : '';
+		$charge = isset($post_data['charge']) ? $post_data['charge'] : '';
 		$zip = isset($post_data['zip']) ? $post_data['zip'] : '';
 		$address = isset($post_data['address']) ? $post_data['address'] : '';
 		$tel = isset($post_data['tel']) ? $post_data['tel'] : '';
@@ -621,6 +649,7 @@ class Summer21 extends MY_Controller
 		$insert_data = array(
 			'guest_num'		=> $guest_num,
 			'juku_name'		=> $juku_name,
+			'charge'		=> $charge,
 			'zip'			=> $zip,
 			'address'		=> $address,
 			'tel'			=> $tel,
@@ -931,6 +960,26 @@ class Summer21 extends MY_Controller
 			);
 
 			$this->m_mail->send($params);
+
+			// 関西は営業にもメールでお知らせ
+			if( $office == 'kansai' ) {
+				$mail_data = array(
+					'ADATA'		=> $insert_data_apply_exhibition,
+					'AREA'		=> $area,
+					'TIME'		=> $exhibition_time
+				);
+				$mail_body = $this->load->view('mail/tmpl_apply_exhibition_to_admin', $mail_data, TRUE);
+
+				$params = array(
+					'from'		=> $this->conf_mail['apply_comp_to_kansai']['from'],
+					'from_name'	=> $this->conf_mail['apply_comp_to_kansai']['from_name'],
+					'to'		=> $this->conf_mail['apply_comp_to_kansai']['to'],
+					'subject'	=> '展示会への申込みがありました',
+					'message'	=> $mail_body
+				);
+
+				$this->m_mail->send($params);
+			}
 		}
 
 		$view_data = array(
@@ -974,30 +1023,39 @@ class Summer21 extends MY_Controller
 		switch( $exhibition_data['place_summer21'] ) {
 			case '2':
 				$area = '広島会場［５月２６日（水）］';
+				$office_name = 'chushikoku';
 				break;
 			case '3':
 				$area = '岡山会場［５月３１日（月）］';
+				$office_name = 'chushikoku';
 				break;
 			case '4':
 				$area = '松山会場［５月２７日（木）］';
+				$office_name = 'chushikoku';
 				break;
 			case '5':
 				$area = '福山会場［５月２８日（金）］';
+				$office_name = 'chushikoku';
 				break;
 			case '6':
 				$area = '米子会場［５月２５日（火）］';
+				$office_name = 'chushikoku';
 				break;
 			case '7':
 				$area = '大阪会場［６月１日（火）］';
+				$office_name = 'kansai';
 				break;
 			case '8':
 				$area = '京都会場［６月２日（水）］';
+				$office_name = 'kansai';
 				break;
 			case '9':
 				$area = '神戸会場［６月３日（木）］';
+				$office_name = 'kansai';
 				break;
 			case '10':
 				$area = '姫路会場［６月４日（金）］';
+				$office_name = 'kansai';
 				break;
 		}
 
@@ -1007,7 +1065,8 @@ class Summer21 extends MY_Controller
 			'ADATA'		=> $apply_exhibition_data,
 			'AREA'		=> $area,
 			'TIME'		=> $exhibition_time,
-			'OFFICE'	=> $exhibition_data['office']
+			'OFFICE'	=> $exhibition_data['office'],
+			'O_NAME'	=> $office_name
 		);
 
 		$this->load->view('front/summer21/exhibition_reception', $view_data);

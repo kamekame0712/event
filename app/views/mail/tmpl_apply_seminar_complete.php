@@ -18,7 +18,7 @@
 お申込み人数：<?= ( empty($ADATA['guest_name2']) ? '1名' : '2名' ) . "\r\n" ?>
 塾名：<?= $ADATA['juku_name'] . "\r\n" ?>
 セミナー：参加
-夏期テキスト展示：<?= $EX ?><?= !empty($ADATA['EX_TIME']) ? $ADATA['EX_TIME'] : '' ?>
+夏期テキスト展示：<?= $EX ?><?= !empty($EX_TIME) ? '（' . $EX_TIME . '）' : '' ?>
 　
 
 

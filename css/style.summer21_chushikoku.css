@@ -3,14 +3,6 @@
 	padding: 20px 0;
 }
 
-.top-image .new-label {
-	position: absolute;
-	bottom: -17px;
-	right: 126px;
-	width: 160px;
-    z-index: 10;
-}
-
 .top-image .text-list {
     margin-top: -20px;
     display: flex;
@@ -41,7 +33,7 @@
 }
 
 .guide .guide-content {
-	padding: 96px 0 15px;
+	padding: 60px 0 15px;
 	color: #FFFFFF;
 }
 
@@ -185,12 +177,6 @@ iframe {
 @media screen and (max-width : 768px) {
     .top-image {
         padding: 0;
-    }
-
-    .top-image .new-label {
-        bottom: -50px;
-        right: 0;
-        width: 100px;
     }
 
     .top-image .text-list {
