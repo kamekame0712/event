@@ -16,20 +16,25 @@
 						<div class="row">
 							<div class="col-12 col-md-8">
 								<div class="card card-primary">
-									<div class="card-header">
-										<?php echo form_button(array(
-											'name'		=> 'btn_add',
-											'content'	=> '新規追加',
-											'class'		=> 'btn btn-primary note-btn',
-											'onclick'	=> 'add_seminar();'
-										)); ?>
-									</div>
+									<?php if( $this->session->userdata('admin_id') == '1' ): ?>
+										<div class="card-header">
+											<?php echo form_button(array(
+												'name'		=> 'btn_add',
+												'content'	=> '新規追加',
+												'class'		=> 'btn btn-primary note-btn',
+												'onclick'	=> 'add_seminar();'
+											)); ?>
+										</div>
+									<?php endif; ?>
+
 									<div class="card-body">
 										<div class="table-responsive">
 											<table id="tbl_seminar" class="table table-striped table-sm">
 												<thead>
 													<tr>
-														<th data-column-id="col_proc" data-formatter="col_proc" data-sortable="false" data-width="140px">処理</th>
+														<?php if( $this->session->userdata('admin_id') == '1' ): ?>
+															<th data-column-id="col_proc" data-formatter="col_proc" data-sortable="false" data-width="140px">処理</th>
+														<?php endif; ?>
 														<th data-column-id="col_proc2" data-formatter="col_proc2" data-sortable="false" data-width="200px">申込状況</th>
 														<th data-column-id="office" data-width="150px">主催オフィス</th>
 														<th data-column-id="place" data-width="80px" data-sortable="false">会場</th>
