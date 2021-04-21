@@ -77,7 +77,7 @@
 			</div> <!-- end of .container-fluid -->
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('summer21/' . $OFFICE) ?>">トップに戻る</a>
+				<a href="<?= site_url('summer21/' . $OFFICE . '?referer=seminar_reception') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

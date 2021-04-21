@@ -147,7 +147,7 @@
 			<?php echo form_close(); ?>
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('summer21/kyushu') ?>">トップに戻る</a>
+				<a href="<?= site_url('summer21/kyushu?referer=apply_seminar') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

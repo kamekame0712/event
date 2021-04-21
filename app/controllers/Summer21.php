@@ -24,6 +24,11 @@ class Summer21 extends MY_Controller
 
 		// バリデーションエラー設定
 		$this->form_validation->set_error_delimiters('<p class="error-msg">', '</p>');
+
+		// アクセスログ記録
+		$get_data = $this->input->get();
+		$referer = isset($get_data['referer']) ? $get_data['referer'] : NULL;
+		$this->set_analytics($referer);
 	}
 
 	public function kansai()

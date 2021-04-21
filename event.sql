@@ -105,3 +105,16 @@ CREATE TABLE `t_apply_exhibition_summer21` (
 
   PRIMARY KEY (apply_exhibition_summer21_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `t_analytics` (
+  `analytics_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `referer` varchar(64) DEFAULT NULL COMMENT 'リンク元',
+  `url` varchar(128) NOT NULL COMMENT '参照されたページURL',
+  `remote_addr` varchar(64) DEFAULT NULL COMMENT '$_SERVER[REMOTE_ADDR]',
+  `user_agent` varchar(256) DEFAULT NULL COMMENT '$_SERVER[HTTP_USER_AGENT]',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (analytics_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

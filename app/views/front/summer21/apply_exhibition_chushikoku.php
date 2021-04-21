@@ -293,7 +293,7 @@
 			<?php echo form_close(); ?>
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('summer21/chushikoku') ?>">トップに戻る</a>
+				<a href="<?= site_url('summer21/chushikoku?referer=apply_exhibition') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

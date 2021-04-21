@@ -60,7 +60,7 @@
 			<?php endif; ?>
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('summer21/' . $OFFICE) ?>">トップに戻る</a>
+				<a href="<?= site_url('summer21/' . $OFFICE . '?referer=seminar_complete') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

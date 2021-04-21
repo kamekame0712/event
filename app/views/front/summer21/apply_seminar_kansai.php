@@ -291,7 +291,7 @@
 			<?php echo form_close(); ?>
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('summer21/kansai') ?>">トップに戻る</a>
+				<a href="<?= site_url('summer21/kansai?referer=apply_seminar') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

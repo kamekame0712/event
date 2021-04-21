@@ -41,6 +41,26 @@ class MY_Controller extends CI_Controller
 			->set_output($data);
 	}
 
+	// アクセスログの記録
+	public function set_analytics($referer = NULL)
+	{
+		// モデルロード
+		$this->load->model('m_analytics');
+
+		$now = date('Y-m-d H:i:s');
+		$insert_data = array(
+			'referer'	=> $referer,
+			'url'		=> uri_string(),
+			'remote_addr'	=> $this->input->server('REMOTE_ADDR'),
+			'user_agent'	=> $this->input->server('HTTP_USER_AGENT'),
+			'regist_time'	=> $now,
+			'update_time'	=> $now,
+			'status'		=> '0'
+		);
+
+		$this->m_analytics->insert($insert_data);
+	}
+
 
 
 	/*****************************************/
