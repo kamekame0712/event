@@ -99,3 +99,53 @@ dl.confirm-list dd {
     padding-bottom: 10px;
 }
 /* #endregion 展示会管理 */
+
+/* #region アクセス状況確認 */
+dl.aboud-dl-data {
+    margin: 0;
+    padding: 0;
+}
+
+dl.aboud-dl-data::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+dl.aboud-dl-data dt {
+    font-weight: normal;
+    float: left;
+    width: 160px;
+    padding-top: 10px;
+}
+
+dl.aboud-dl-data dd {
+    padding: 10px 0 10px 160px;
+    border-bottom: 1px solid #C0C0C0;
+}
+
+dl.aboud-dl-data dd:last-child {
+    border-bottom: none;
+}
+
+dl.aboud-dl-data dd ul {
+    line-height: inherit;
+    margin: 5px 0 0;
+    padding-left: 2.5rem;
+}
+
+dl.aboud-dl-data dd ul li span.w-60 {
+    display: inline-block;
+    width: 60px;
+}
+
+dl.aboud-dl-data dd ul li span.w-145 {
+    display: inline-block;
+    width: 145px;
+}
+
+dl.aboud-dl-data dd ul li span.w-210 {
+    display: inline-block;
+    width: 210px;
+}
+/* #endregion アクセス状況確認 */

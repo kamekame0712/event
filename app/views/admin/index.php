@@ -51,6 +51,13 @@
 													</tr>
 
 													<tr>
+														<td><a href="<?= site_url('admin/analytics') ?>"><i class="far fa-chart-bar"></i>&nbsp;アクセス状況確認</a></td>
+														<td>
+															サイトのアクセス状況の確認が行えます。
+														</td>
+													</tr>
+
+													<tr>
 														<td><a href="<?= site_url('admin/manage') ?>"><i class="fas fa-user-tie"></i>&nbsp;管理者管理</a></td>
 														<td>
 															管理者の登録、修正、削除が行えます。
