@@ -29,7 +29,8 @@ class Analytics extends MY_Controller
 			'APPLY_Q'	=> $this->m_analytics->get_count(array('url' => 'summer21/apply_seminar/kyushu', 'remote_addr !=' => $this->ip_chushikoku)),
 			'COM'		=> $this->m_analytics->get_count(array('referer' => 'com', 'remote_addr !=' => $this->ip_chushikoku)),
 			'COJP'		=> $this->m_analytics->get_count(array('referer' => 'cojp', 'remote_addr !=' => $this->ip_chushikoku)),
-			'SHOP'		=> $this->m_analytics->get_count(array('referer' => 'netshop', 'remote_addr !=' => $this->ip_chushikoku))
+			'SHOP'		=> $this->m_analytics->get_count(array('referer' => 'netshop', 'remote_addr !=' => $this->ip_chushikoku)),
+			'DIRECT'	=> $this->m_analytics->get_direct_count()
 		);
 
 		$this->load->view('admin/analytics/index', $view_data);
