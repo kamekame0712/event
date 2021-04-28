@@ -54,6 +54,7 @@ class Seminar_kyushu extends MY_Controller
 		else {
 			$csv_array = array(
 				'塾名',
+				'申込担当者名',
 				'申込人数',
 				'郵便番号',
 				'住所',
@@ -66,6 +67,7 @@ class Seminar_kyushu extends MY_Controller
 			foreach( $apply_seminar_data as $val ) {
 				$csv_array = array(
 					$val['juku_name'],
+					$val['charge'],
 					$val['guest_num'],
 					$val['zip'],
 					$val['address'],
@@ -160,6 +162,7 @@ class Seminar_kyushu extends MY_Controller
 					'apply_id'		=> $val['apply_seminar_summer21_kyushu_id'],
 					'guest_num'		=> $val['guest_num'],
 					'juku_name'		=> $val['juku_name'],
+					'charge'		=> $val['charge'],
 					'zip'			=> $val['zip'],
 					'address'		=> $val['address'],
 					'tel'			=> $val['tel'],

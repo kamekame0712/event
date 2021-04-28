@@ -23,6 +23,7 @@
 													<tr>
 														<th data-column-id="col_proc" data-formatter="col_proc" data-sortable="false" data-width="140px">処理</th>
 														<th data-column-id="juku_name" data-width="150px">塾名</th>
+														<th data-column-id="charge" data-width="100px">担当者名</th>
 														<th data-column-id="guest_num" data-width="90px">申込人数</th>
 														<th data-column-id="zip" data-width="90px">郵便番号</th>
 														<th data-column-id="address" data-width="200px">住所</th>
