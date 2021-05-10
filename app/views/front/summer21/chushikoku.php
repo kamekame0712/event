@@ -126,6 +126,7 @@
 				</div>
 			</div>
 
+			<?php /* ?>
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-4 mb-5">
 					<?php echo form_button(array(
@@ -136,6 +137,7 @@
 					)); ?>
 				</div>
 			</div> <!-- end of .row -->
+			<?php */ ?>
 
 			<h1 class="title mt-md-5">会場一覧（参加無料&nbsp;/&nbsp;事前申込制）</h1>
 
@@ -259,6 +261,7 @@
 				<p class="text-attention">当展示会は、事前のお申込みが必要となります。</p>
 			</div>
 
+			<?php /* ?>
 			<div class="row justify-content-center mb-5">
 				<div class="col-12 col-md-4">
 					<?php echo form_button(array(
@@ -269,6 +272,7 @@
 					)); ?>
 				</div>
 			</div> <!-- end of .row -->
+			<?php */ ?>
 		</div> <!-- end of container -->
 
 		<?php $this->load->view('front/summer21/footer'); ?>

@@ -186,6 +186,7 @@
 						</div>
 					</div>
 
+					<?php /* ?>
 					<div class="row justify-content-center">
 						<div class="col-12 col-md-4 text-right">
 							<?php echo form_button(array(
@@ -196,6 +197,7 @@
 							)); ?>
 						</div>
 					</div> <!-- end of .row -->
+					<?php */ ?>
 				<?php endif; ?>
 			<?php else: ?>
 				<p class="info-apply-method">
