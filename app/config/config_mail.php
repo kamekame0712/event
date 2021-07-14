@@ -16,6 +16,12 @@ $config['mail'] = array(
 		'from_name'	=> 'セミナー・展示会参加申込フォーム'
 	),
 
+	// オンラインセミナー参加申込フォームから申込者へ
+	'apply_webinar21004_comp_to_customer' => array(
+		'from'		=> 'info@chuoh-kyouiku.co.jp',
+		'from_name'	=> 'オンラインセミナー参加申込フォーム'
+	),
+
 	// 参加申込フォームから関西営業へ
 	'apply_comp_to_kansai' => array(
 		'from'		=> 'info@chuoh-kyouiku.co.jp',

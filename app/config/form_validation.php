@@ -192,5 +192,43 @@ $config = array(
 		)
 	),
 
+	// 21004申込フォーム
+	'webinar21004' => array(
+		array(
+			'field' => 'seminar[]',
+			'label' => 'ご希望の日程',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'juku_name',
+			'label' => '貴塾名',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'participant',
+			'label' => 'ご参加者氏名',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'pref',
+			'label' => 'ご住所(都道府県)',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'tel',
+			'label' => '電話番号',
+			'rules' => 'required'
+		),
+
+		array(
+			'field' => 'email',
+			'label' => 'メールアドレス',
+			'rules' => 'required|valid_email'
+		)
+	),
 
 );

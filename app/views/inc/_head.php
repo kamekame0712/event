@@ -11,6 +11,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	<link rel="stylesheet" href="<?= base_url('css/thirdparty/featherlight.css')?>">
 
+	<?php if( isset($LINK) ): ?>
+		<?php if( is_array($LINK) ): ?>
+			<?php foreach( $LINK as $val ): ?>
+				<link rel="stylesheet" href="<?= $val ?>">
+			<?php endforeach; ?>
+		<?php else: ?>
+			<link rel="stylesheet" href="<?= $LINK ?>">
+		<?php endif; ?>
+	<?php endif; ?>
+
 	<link rel="stylesheet" href="<?= base_url('css/style.common.css') ?>?var=<?= CACHES_CLEAR_VERSION ?>">
 
 	<?php if( isset($CSS) ): ?>

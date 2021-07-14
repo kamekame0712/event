@@ -106,6 +106,23 @@ CREATE TABLE `t_apply_exhibition_summer21` (
   PRIMARY KEY (apply_exhibition_summer21_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_apply_webinar21004` (
+  `apply_webinar21004_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `seminar` varchar(1) NOT NULL COMMENT '希望日程 1:9/16 2:10/1 3:両方',
+  `juku_name` varchar(128) NOT NULL COMMENT '塾名',
+  `classroom` varchar(128) DEFAULT NULL COMMENT '教室名',
+  `participant` varchar(32) NOT NULL COMMENT '参加者名',
+  `position` varchar(32) DEFAULT NULL COMMENT '役職',
+  `pref` varchar(2) NOT NULL COMMENT '都道府県',
+  `tel` varchar(16) NOT NULL COMMENT '電話番号',
+  `email` varchar(256) DEFAULT NULL COMMENT 'メールアドレス',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (apply_webinar21004_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `t_analytics` (
   `analytics_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `referer` varchar(64) DEFAULT NULL COMMENT 'リンク元',

@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+/* #region 全体 */
+body {
+    background-size: auto 15px;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(206, 225, 224, 1) 4px, rgba(206, 225, 224, 1) 8px );
+    background-repeat: no-repeat;
+}
+
+.go-to-top {
+    color: #006AB4;
+    font-size: 4.5rem;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+
+h1.title {
+    width: 100%;
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #006AB4;
+    border-bottom: 1px solid #006AB4;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.for-checkbox {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+.for-checkbox::before {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.for-checkbox::after {
+    border-right: 4px solid #006AB4;
+    border-bottom: 3px solid #006AB4;
+    content: '';
+    display: block;
+    height: 20px;
+    top: 21px;
+    left: 9px;
+    margin-top: -16px;
+    opacity: 0;
+    position: absolute;
+    transform: rotate(45deg) translate3d(0, 2px, 0) scale3d(0.7, 0.7, 1.0);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 9px;
+}
+
+input[type="checkbox"]:checked + .for-checkbox::before {
+    border-color: #666666;
+}
+
+input[type="checkbox"]:checked + .for-checkbox::after {
+    opacity: 1.0;
+    transform: rotate(45deg) scale3d(1.0, 1.0, 1.0);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.for-radio {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+.for-radio::before {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.for-radio::after {
+    background: #006AB4;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 8px;
+    margin-top: -4px;
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    transform: scale3d(0.3, 0.3, 1.0);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 10px;
+}
+
+input[type="radio"]:checked + .for-radio::before {
+    border-color: #666666;
+}
+
+input[type="radio"]:checked + .for-radio::after {
+    opacity: 1;
+    transform: scale3d(1.0, 1.0, 1.0);
+}
+
+.btn-base {
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-enabled {
+    background-color: #EA3322;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.btn-enabled:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.btn-disabled {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: not-allowed !important;
+}
+
+.btn-back {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.btn-back:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width : 768px) {
+    .go-to-top {
+        font-size: 3.5rem;
+        right: 30px;
+        bottom: 20px;
+    }
+
+    .wrapper {
+        padding-bottom: 320px;
+    }
+
+    .for-radio::after {
+        top: 15px;
+    }
+}
+/* #endregion 全体 */
+
+/* #region ヘッダー */
+header {
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 25px 0;
+    position: relative;
+    background: linear-gradient(120deg,  #FFFFFF 0%,#FFFFFF 55%,#FFE95A 55%,#FFE95A 100%);
+    position: relative;
+    top: 15px;
+}
+/* #endregion ヘッダー */
+
+/* #region フッター */
+footer {
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 25px 0 0;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-size: auto auto;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(206, 225, 224, 1) 4px, rgba(206, 225, 224, 1) 8px );
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer img.logo {
+    max-width: 260px;
+}
+
+footer dl.office {
+    margin: 10px 20px;
+}
+
+footer dl.office dd span {
+    font-size: 1.0rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+footer .copyright {
+    text-align: center;
+    background-color: #FFE95A;
+    color: #006AB4;
+    margin: 10px 0 0;
+    padding: 5px 0;
+}
+
+@media screen and (max-width : 768px) {
+    footer img.logo {
+        max-width: 160px;
+    }
+}
+/* #endregion フッター */
+
+/* #region トップページ */
+.top-header {
+    background: linear-gradient(177deg,  #FFFFFF 0%,#FFFFFF 40%,#FFE95A 40%,#FFE95A 100%);
+    position: relative;
+    top: 30px;
+    padding: 0 0 15px;
+    margin-bottom: 50px;
+}
+
+.top-header .introduce-box {
+    margin: 20px auto 15px;
+}
+
+.top-header .introduce-box h4 {
+    display: inline-block;
+    background-color: #006AB4;
+    color: #FFFFFF;
+    padding: 3px 4px;
+}
+
+.top-header .introduce-box .name {
+    font-size: 3.0rem;
+    font-weight: bold;
+    color: #006AB4;
+    margin: 0;
+}
+
+.top-header .introduce-box .introduction {
+    color: #006AB4;
+    font-weight: bold;
+}
+
+.notice-box {
+    color: #EA3322;
+    font-weight: bold;
+    text-align: center;
+}
+
+.notice-box a {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 2.0rem;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #EA3322;
+    color: #FFFFFF;
+    padding: 6px 35px;
+    margin: 7px auto 0;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.notice-box a:hover {
+    opacity: 0.8;
+}
+
+.notice-box .archive-info {
+    margin: 80px auto 0;
+    padding: 35px 15px 10px;
+    width: 90%;
+    max-width: 600px;
+    border: 2px solid #E9550D;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.notice-box .archive-info img {
+    display: block;
+    width: 261px;
+    position: absolute;
+    top: -43px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.how-to-apply {
+    margin: 30px auto 0;
+}
+
+.how-to-apply img {
+    width: 196px;
+}
+
+.how-to-apply .arrow-triangle-right {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+}
+
+.how-to-apply .arrow-triangle-right::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 30px solid #EA3322;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.how-to-attend {
+    width: 50%;
+    border: 1px solid #006AB4;
+    padding: 15px 25px;
+    margin: 40px auto 30px;
+}
+
+.how-to-attend h4 {
+    color: #006AB4;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 15px;
+}
+
+.how-to-attend p {
+    margin: 0;
+}
+
+.how-to-attend p span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+@media screen and (max-width : 768px) {
+    .top-header {
+        background: #FFFFFF;
+    }
+
+    .notice-box a {
+        font-size: 1.6rem;
+    }
+
+    .notice-box .archive-info {
+        width: 100%;
+    }
+
+    .how-to-apply img {
+        width: 125px;
+    }
+
+    .how-to-attend {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .how-to-attend p span {
+        line-height: inherit;
+    }
+}
+/* #endregion トップページ */
+
+/* #region 申込フォーム */
+ul.breadcrumb-list {
+    overflow: hidden;
+    margin: 30px auto 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul.breadcrumb-list li {
+    margin: 0 10px;
+    background-color: #DBEFFF;
+    padding: 13px 0;
+    color: #006AB4;
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+ul.breadcrumb-list li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.7em;
+    border-width: 1.7em 0 1.7em 1em;
+    border-style: solid;
+    border-color: #DBEFFF #DBEFFF #DBEFFF transparent;
+    left: -1em;
+}
+
+ul.breadcrumb-list li:first-child {
+    border-radius: 3px 0 0 3px;
+    margin-left: 0;
+}
+
+ul.breadcrumb-list li:first-child::before {
+    border: none;
+}
+
+ul.breadcrumb-list li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.7em;
+    border-top: 1.7em solid transparent;
+    border-bottom: 1.7em solid transparent;
+    border-left: 1em solid #DBEFFF;
+    right: -1em;
+}
+
+ul.breadcrumb-list li:last-child {
+    border-radius: 0 3px 3px 0;
+    margin-right: 0;
+}
+
+ul.breadcrumb-list li:last-child::after {
+    border: none;
+}
+
+ul.breadcrumb-list .current {
+    font-weight: bold;
+    background-color: #006AB4;
+    color: #FFFFFF;
+}
+
+ul.breadcrumb-list .current::after {
+    border-left-color: #006AB4;
+}
+
+ul.breadcrumb-list .current::before {
+    border-color: #006AB4 #006AB4 #006AB4 transparent;
+}
+
+.form-box {
+    border: 2px solid #FFE95A;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 6px;
+}
+
+.form-box .item-title {
+    padding: 0 0 0 1.2rem;
+    margin: 0;
+    color: #006AB4;
+    font-weight: bold;
+    position: relative;
+}
+
+.form-box .item-title::before {
+    content: "";
+    display: block;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-color: #006AB4;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.form-box dl.item-box {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.form-box dl.item-box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.form-box dl.item-box dt {
+    float: left;
+    width: 160px;
+    position: relative;
+}
+
+.form-box dl.item-box dt.required::after,
+.form-box dl.item-box dt.optional::after {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: -20px;
+    padding: 1px 4px;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.form-box dl.item-box dt.required::after {
+    content: "必須";
+    background-color: #EA3322;
+}
+
+.form-box dl.item-box dt.optional::after {
+    content: "任意";
+    background-color: #006AB4;
+}
+
+.form-box dl.item-box dd {
+    padding-left: 190px;
+    margin-bottom: 20px;
+}
+
+.form-box dl.item-box dd:last-child {
+    margin-bottom: 0;
+}
+
+.form-box dl.item-box dd .full-capacity {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 5px;
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+    text-decoration: line-through;
+}
+
+.form-box dl.item-box dd .full-capacity-info {
+    text-decoration: none;
+    color: #EA3322;
+}
+
+.form-box dl.item-box dd .seminar-label {
+    line-height: 2.5rem;
+    font-size: 2.0rem;
+}
+
+.form-box dl.item-box dd input[type="text"],
+.form-box dl.item-box dd select {
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #006AB4;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+.form-box dl.item-box dd select {
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.form-box dl.item-box dd input[type="text"]::placeholder {
+    color: #006AB4;
+    opacity: 0.5;
+}
+
+h2.complete-comment {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.attention-box {
+    border: 2px solid #006AB4;
+    border-radius: 8px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.attention-box h2 {
+    font-size: 2.0rem;
+    font-weight: bold;
+    background-color: #006AB4;
+    color: #FFFFFF;
+    padding: 7px 0 7px 20px;
+    margin: 0;
+}
+
+.attention-box .content {
+    padding: 10px;
+}
+
+.attention-box .content p {
+    margin: 0;
+}
+
+.attention-box .content dl {
+    margin: 0 10px;
+}
+
+.attention-box .content dl dt {
+    margin-top: 20px;
+}
+
+.attention-box .content dl dd {
+    margin-left: 1em;
+}
+
+.anchor-to-back {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.anchor-to-back a {
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width : 768px) {
+    ul.breadcrumb-list li {
+        font-size: 1.2rem;
+    }
+
+    ul.breadcrumb-list li::before {
+        margin-top: -2.0em;
+        border-width: 2.0em 0 2.0em 1em;
+    }
+
+    ul.breadcrumb-list li::after {
+        margin-top: -2.0em;
+        border-top: 2.0em solid transparent;
+        border-bottom: 2.0em solid transparent;
+    }
+
+    .form-box dl.item-box dt {
+        float: none;
+        width: auto;
+    }
+
+    .form-box dl.item-box dt.required::after,
+    .form-box dl.item-box dt.optional::after {
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        right: 0;
+        margin-left: 10px;
+    }
+
+    .form-box dl.item-box dd {
+        padding-left: 0;
+    }
+
+    .form-box dl.item-box dd .full-capacity {
+        font-size: 1.4rem;
+        line-height: 1.0rem;
+    }
+
+    .form-box dl.item-box dd .seminar-label {
+        font-size: 1.4rem;
+        line-height: 1.0rem;
+    }
+
+    h2.complete-comment {
+        font-size: 1.9rem;
+    }
+}
+/* #endregion 申込フォーム */
+
+/* #region アーカイブ配信 */
+.archive-box {
+    border: 2px solid #006AB4;
+    border-radius: 8px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.archive-box h2 {
+    font-size: 2.0rem;
+    font-weight: bold;
+    background-color: #006AB4;
+    color: #FFFFFF;
+    padding: 7px 0 7px 20px;
+    margin: 0;
+}
+
+.archive-box .content {
+    padding: 10px;
+}
+
+.archive-box .content iframe {
+    height: auto;
+    min-height: 480px;
+    width: 100%;
+    border: none;
+}
+
+@media screen and (max-width : 768px) {
+    .archive-box .content iframe {
+        min-height: auto;
+    }
+}
+/* #endregion アーカイブ配信 */

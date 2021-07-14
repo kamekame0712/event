@@ -26,6 +26,7 @@
 													</tr>
 												</thead>
 												<tbody>
+<?php /* ?>
 													<tr>
 														<td><a href="<?= site_url('admin/seminar') ?>"><i class="fas fa-chalkboard-teacher"></i>&nbsp;セミナー管理</a></td>
 														<td>
@@ -54,6 +55,15 @@
 														<td><a href="<?= site_url('admin/analytics') ?>"><i class="far fa-chart-bar"></i>&nbsp;アクセス状況確認</a></td>
 														<td>
 															サイトのアクセス状況の確認が行えます。
+														</td>
+													</tr>
+<?php */ ?>
+
+													<tr>
+														<td><a href="<?= site_url('admin/webinar21004') ?>"><i class="fas fa-list-ol"></i>&nbsp;申し込み状況確認</a></td>
+														<td>
+															2021年9月・10月に行われる安河内先生のオンラインセミナーへの申し込み状況の確認が行えます。<br>
+															また、申し込み状況のダウンロードも行えます。
 														</td>
 													</tr>
 

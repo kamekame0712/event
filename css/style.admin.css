@@ -149,3 +149,26 @@ dl.aboud-dl-data dd ul li span.w-210 {
     width: 210px;
 }
 /* #endregion アクセス状況確認 */
+
+/* #region 申し込み状況確認 */
+dl.apply-total {
+    margin: 0;
+    padding: 0;
+}
+
+dl.apply-total::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+dl.apply-total dt {
+    font-weight: normal;
+    float: left;
+    width: 340px;
+}
+
+dl.apply-total dd {
+    padding-left: 340px;
+}
+/* #endregion 申し込み状況確認 */
