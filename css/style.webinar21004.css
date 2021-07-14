@@ -60,7 +60,7 @@ input[type="checkbox"] {
     content: '';
     display: block;
     height: 20px;
-    top: 21px;
+    top: 56%;
     left: 9px;
     margin-top: -16px;
     opacity: 0;
@@ -389,7 +389,7 @@ footer .copyright {
 
 @media screen and (max-width : 768px) {
     .top-header {
-        background: #FFFFFF;
+        background: linear-gradient(180deg,  #FFFFFF 0%,#FFFFFF 12%,#FFE95A 12%,#FFE95A 100%);
     }
 
     .notice-box a {
@@ -693,12 +693,12 @@ h2.complete-comment {
 
     .form-box dl.item-box dd .full-capacity {
         font-size: 1.4rem;
-        line-height: 1.0rem;
+        line-height: 1.5rem;
     }
 
     .form-box dl.item-box dd .seminar-label {
         font-size: 1.4rem;
-        line-height: 1.0rem;
+        line-height: 1.5rem;
     }
 
     h2.complete-comment {

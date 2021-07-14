@@ -43,7 +43,7 @@
 			<div class="notice-box">
 				<p>当セミナーは、事前のお申し込みが必要となります。</p>
 				<a href="<?= site_url('webinar21004/apply') ?>">
-					セミナー　参加お申し込み&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i>
+					セミナー　参加お申し込み　<i class="fas fa-chevron-right"></i>
 				</a>
 				<div class="archive-info">
 					<img src="<?= base_url('img/webinar21004/archive_info.png') ?>" alt="アーカイブ配信">
@@ -118,7 +118,7 @@
 			<div class="notice-box">
 				<p>当セミナーは、事前のお申し込みが必要となります。</p>
 				<a href="<?= site_url('webinar21004/apply') ?>">
-					セミナー　参加お申し込み&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i>
+					セミナー　参加お申し込み　<i class="fas fa-chevron-right"></i>
 				</a>
 				<div class="archive-info">
 					<img src="<?= base_url('img/webinar21004/archive_info.png') ?>" alt="アーカイブ配信">

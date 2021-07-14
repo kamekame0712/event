@@ -73,7 +73,7 @@
 						<div class="col-12 col-md-4">
 							<?php echo form_button(array(
 								'name'		=> 'btn-submit',
-								'class'		=> 'btn-base btn-enabled',
+								'class'		=> 'btn-base btn-enabled mt-3 mt-md-0',
 								'content'	=> 'この内容で送信する&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-right"></i>',
 								'onclick'	=> 'do_submit(2);'
 							)); ?>

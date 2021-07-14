@@ -131,8 +131,8 @@
 							'id'	=> 'newsletter',
 							'checked'	=> 'checked'
 						)); ?>
-						<?php echo form_label('CHUOHメルマガへの会員登録（無料）を行う。', 'newsletter', array('class' => 'for-checkbox')); ?>
-						<p id="newsletter_required" class="text-danger" style="display:none;">※オンラインセミナーへのお申し込みはCHUOHメルマガへの会員登録（無料）が必須となっております。<br>（すでにご登録いただいている方につきましては重複して登録されることはございませんので、チェックを付けてお進みください。）</p>
+						<?php echo form_label('弊社メールマガジンへの<br class="for-sp">会員登録（無料）を行う。', 'newsletter', array('class' => 'for-checkbox')); ?>
+						<p id="newsletter_required" class="text-danger" style="display:none;">※オンラインセミナーへのお申し込みは弊社メールマガジンへの会員登録（無料）が必須となっております。<br>（すでにご登録いただいている方につきましては重複して登録されることはございませんので、チェックを付けてお進みください。）</p>
 					</div>
 
 					<div class="container-fluid mt-3 mb-4">
