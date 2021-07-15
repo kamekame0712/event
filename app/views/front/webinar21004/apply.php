@@ -34,7 +34,7 @@
 							<?php endif; ?>
 
 							<?php if( strtotime(date('Y-m-d')) > strtotime('2021-09-25') || $NUM2 >= 900 ): ?>
-								<p class="full-capacity">１０月１日（金）<br class="for-sp">【いまからできる大学入試対策】</p>
+								<p class="full-capacity">１０月１日（金）<br class="for-sp">【今からできる大学入試対策】</p>
 							<?php else: ?>
 								<?php echo form_checkbox(array(
 									'name'	=> 'seminar[]',
@@ -42,7 +42,7 @@
 									'value'	=> '2',
 									'checked'	=> set_checkbox('seminar[]', '2', FALSE)
 								)); ?>
-								<?php echo form_label('１０月１日（金）<br class="for-sp">【いまからできる大学入試対策】', 'seminar_2', array('class' => 'for-checkbox seminar-label')); ?>
+								<?php echo form_label('１０月１日（金）<br class="for-sp">【今からできる大学入試対策】', 'seminar_2', array('class' => 'for-checkbox seminar-label')); ?>
 							<?php endif; ?>
 
 							<?php echo form_error('seminar[]'); ?>
@@ -128,11 +128,10 @@
 					<div class="text-center">
 						<?php echo form_checkbox(array(
 							'name'	=> 'newsletter',
-							'id'	=> 'newsletter',
-							'checked'	=> 'checked'
+							'id'	=> 'newsletter'
 						)); ?>
 						<?php echo form_label('弊社メールマガジンへの<br class="for-sp">会員登録（無料）を行う。', 'newsletter', array('class' => 'for-checkbox')); ?>
-						<p id="newsletter_required" class="text-danger" style="display:none;">※オンラインセミナーへのお申し込みは弊社メールマガジンへの会員登録（無料）が必須となっております。<br>（すでにご登録いただいている方につきましては重複して登録されることはございませんので、チェックを付けてお進みください。）</p>
+						<p id="newsletter_required" class="text-danger">※オンラインセミナーへのお申し込みは弊社メールマガジンへの会員登録（無料）が必須となっております。<br>（すでにご登録いただいている方につきましては重複して登録されることはございませんので、チェックを付けてお進みください。）</p>
 					</div>
 
 					<div class="container-fluid mt-3 mb-4">

@@ -18,11 +18,4 @@ $(document).on('change', '#agreement, #newsletter', function() {
 		$('#btn_enabled').hide();
 		$('#btn_disabled').show();
 	}
-
-	if( $('#newsletter').prop('checked') ) {
-		$('#newsletter_required').slideUp();
-	}
-	else {
-		$('#newsletter_required').slideDown();
-	}
 });

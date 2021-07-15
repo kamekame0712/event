@@ -110,8 +110,8 @@ class Webinar21004 extends MY_Controller
 		if( $this->m_apply_webinar21004->insert($insert_data) ) {
 			switch( $insert_data['seminar'] ) {
 				case '1': $seminar_str = '９月１６日（木）【中学生に必要な英語力】';	break;
-				case '2': $seminar_str = '１０月１日（金）【いまからできる大学入試対策】';	break;
-				default:  $seminar_str = '９月１６日（木）【中学生に必要な英語力】、１０月１日（金）【いまからできる大学入試対策】';	break;
+				case '2': $seminar_str = '１０月１日（金）【今からできる大学入試対策】';	break;
+				default:  $seminar_str = '９月１６日（木）【中学生に必要な英語力】、１０月１日（金）【今からできる大学入試対策】';	break;
 			}
 
 			$mail_data = array(

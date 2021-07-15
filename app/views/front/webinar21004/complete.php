@@ -83,14 +83,14 @@
 									<dt>〇パソコンからご参加いただく場合</dt>
 									<dd>
 										以下のURLから、事前に「ミーティング用Zoomクライアント」をダウンロードして実行してください。<br>
-										https://zoom.us/download（Zoomダウンロードセンター）
+										<a href="https://zoom.us/download" target="_blank">https://zoom.us/download</a>（Zoomダウンロードセンター）
 									</dd>
 
 									<dt>〇スマートフォン、タブレットからご参加いただく場合</dt>
 									<dd>
 										以下のURLから、事前に「Zoom Cloud Meeting」をダウンロードしてください。<br>
-										・iPhone / iPad: https://apps.apple.com/jp/app/zoom-cloud-meetings/id546505307<br>
-										・Android: https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=ja
+										・iPhone / iPad: <a href="https://apps.apple.com/jp/app/zoom-cloud-meetings/id546505307" target="_blank">https://apps.apple.com/jp/app/zoom-cloud-meetings/id546505307</a><br>
+										・Android: <a href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=ja" target="_blank">https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=ja</a>
 									</dd>
 								</dl>
 							</div> <!-- end of .content -->

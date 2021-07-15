@@ -17,7 +17,7 @@
 								<iframe src="https://player.vimeo.com/video/573805185" allow="autoplay; fullscreen" allowfullscreen></iframe>
 							</div>
 						<?php elseif( $MOVIE == '2' ): ?>
-							<h2>１０月１日（金）<br class="for-sp">【いまからできる大学入試対策】</h2>
+							<h2>１０月１日（金）<br class="for-sp">【今からできる大学入試対策】</h2>
 							<div class="content">
 								<iframe src="https://player.vimeo.com/video/573805085" allow="autoplay; fullscreen" allowfullscreen></iframe>
 							</div>

@@ -21,13 +21,13 @@
 					<dd>
 						<?php
 							if( in_array('1', $PDATA['seminar'], TRUE) && in_array('2', $PDATA['seminar'], TRUE) ) {
-								$seminar = '９月１６日（木）<br class="for-sp">【中学生に必要な英語力】<br>１０月１日（金）<br class="for-sp">【いまからできる大学入試対策】';
+								$seminar = '９月１６日（木）<br class="for-sp">【中学生に必要な英語力】<br>１０月１日（金）<br class="for-sp">【今からできる大学入試対策】';
 							}
 							else if( in_array('1', $PDATA['seminar'], TRUE) ) {
 								$seminar = '９月１６日（木）<br class="for-sp">【中学生に必要な英語力】';
 							}
 							else {
-								$seminar = '１０月１日（金）<br class="for-sp">【いまからできる大学入試対策】';
+								$seminar = '１０月１日（金）<br class="for-sp">【今からできる大学入試対策】';
 							}
 						?>
 						<?= $seminar ?>
