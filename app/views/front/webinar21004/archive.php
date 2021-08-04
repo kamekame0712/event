@@ -12,12 +12,20 @@
 				<div class="col-12">
 					<div class="archive-box">
 						<?php if( $MOVIE == '1' ): ?>
-							<h2>９月１６日（木）<br class="for-sp">【中学生に必要な英語力】</h2>
+							<h2>
+								９月１６日（木）<br class="for-sp">
+								【中学生に必要な英語力】<br class="for-sp">
+								<span>視聴期限：2021年9月30日まで</span>
+							</h2>
 							<div class="content">
 								<iframe src="https://player.vimeo.com/video/573805185" allow="autoplay; fullscreen" allowfullscreen></iframe>
 							</div>
 						<?php elseif( $MOVIE == '2' ): ?>
-							<h2>１０月１日（金）<br class="for-sp">【今からできる大学入試対策】</h2>
+							<h2>
+								１０月１日（金）<br class="for-sp">
+								【今からできる大学入試対策】
+								<span>視聴期限：2021年10月15日まで</span>
+							</h2>
 							<div class="content">
 								<iframe src="https://player.vimeo.com/video/573805085" allow="autoplay; fullscreen" allowfullscreen></iframe>
 							</div>
