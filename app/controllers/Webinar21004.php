@@ -91,51 +91,56 @@ class Webinar21004 extends MY_Controller
 			$this->input->set_cookie($cookie_data);
 		}
 
-		$now = date('Y-m-d H:i:s');
-		$insert_data = array(
-			'seminar'		=> count($seminar) == 1 ? $seminar[0] : '3',
-			'juku_name'		=> $juku_name,
-			'classroom'		=> $classroom,
-			'participant'	=> $participant,
-			'position'		=> $position,
-			'pref'			=> $pref,
-			'tel'			=> $tel,
-			'email'			=> $email,
-			'regist_time'	=> $now,
-			'update_time'	=> $now,
-			'status'		=> '0'
-		);
-
-		$error_msg = '';
-		if( $this->m_apply_webinar21004->insert($insert_data) ) {
-			switch( $insert_data['seminar'] ) {
-				case '1': $seminar_str = '９月１６日（木）【中学生に必要な英語力】';	break;
-				case '2': $seminar_str = '１０月１日（金）【今からできる大学入試対策】';	break;
-				default:  $seminar_str = '９月１６日（木）【中学生に必要な英語力】、１０月１日（金）【今からできる大学入試対策】';	break;
-			}
-
-			$mail_data = array(
-				'juku'			=> $juku_name . ( !empty($classroom) ? ( '　' . $classroom ) : '' ),
-				'participant'	=> !empty($position) ? ( $position . '　' . $participant ) : $participant,
-				'seminar'		=> $seminar_str,
-				'address'		=> $this->conf['pref'][$pref],
-				'tel'			=> $tel
-			);
-
-			$mail_body = $this->load->view('mail/tmpl_apply_webinar21004', $mail_data, TRUE);
-
-			$params = array(
-				'from'		=> $this->conf_mail['apply_webinar21004_comp_to_customer']['from'],
-				'from_name'	=> $this->conf_mail['apply_webinar21004_comp_to_customer']['from_name'],
-				'to'		=> $email,
-				'subject'	=> 'オンラインセミナーへのお申し込みありがとうございます【中央教育研究所(株)】',
-				'message'	=> $mail_body
-			);
-
-			$this->m_mail->send($params);
+		if( empty($seminar) || $juku_name == '' || $participant == '' || $pref == '' || $tel == '' || $email == '' ) {
+			$error_msg = 'パラメーターエラーが発生しました。';
 		}
 		else {
-			$error_msg = 'データベースエラーが発生しました。';
+			$now = date('Y-m-d H:i:s');
+			$insert_data = array(
+				'seminar'		=> count($seminar) == 1 ? $seminar[0] : '3',
+				'juku_name'		=> $juku_name,
+				'classroom'		=> $classroom,
+				'participant'	=> $participant,
+				'position'		=> $position,
+				'pref'			=> $pref,
+				'tel'			=> $tel,
+				'email'			=> $email,
+				'regist_time'	=> $now,
+				'update_time'	=> $now,
+				'status'		=> '0'
+			);
+
+			$error_msg = '';
+			if( $this->m_apply_webinar21004->insert($insert_data) ) {
+				switch( $insert_data['seminar'] ) {
+					case '1': $seminar_str = '９月１６日（木）【中学生に必要な英語力】';	break;
+					case '2': $seminar_str = '１０月１日（金）【今からできる大学入試対策】';	break;
+					default:  $seminar_str = '９月１６日（木）【中学生に必要な英語力】、１０月１日（金）【今からできる大学入試対策】';	break;
+				}
+
+				$mail_data = array(
+					'juku'			=> $juku_name . ( !empty($classroom) ? ( '　' . $classroom ) : '' ),
+					'participant'	=> !empty($position) ? ( $position . '　' . $participant ) : $participant,
+					'seminar'		=> $seminar_str,
+					'address'		=> $this->conf['pref'][$pref],
+					'tel'			=> $tel
+				);
+
+				$mail_body = $this->load->view('mail/tmpl_apply_webinar21004', $mail_data, TRUE);
+
+				$params = array(
+					'from'		=> $this->conf_mail['apply_webinar21004_comp_to_customer']['from'],
+					'from_name'	=> $this->conf_mail['apply_webinar21004_comp_to_customer']['from_name'],
+					'to'		=> $email,
+					'subject'	=> 'オンラインセミナーへのお申し込みありがとうございます【中央教育研究所(株)】',
+					'message'	=> $mail_body
+				);
+
+				$this->m_mail->send($params);
+			}
+			else {
+				$error_msg = 'データベースエラーが発生しました。';
+			}
 		}
 
 		$view_data = array(
