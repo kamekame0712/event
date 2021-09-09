@@ -10,6 +10,19 @@ CREATE TABLE `t_admin` (
   PRIMARY KEY (admin_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_analytics` (
+  `analytics_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `referer` varchar(64) DEFAULT NULL COMMENT 'リンク元',
+  `url` varchar(128) NOT NULL COMMENT '参照されたページURL',
+  `remote_addr` varchar(64) DEFAULT NULL COMMENT '$_SERVER[REMOTE_ADDR]',
+  `user_agent` varchar(256) DEFAULT NULL COMMENT '$_SERVER[HTTP_USER_AGENT]',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (analytics_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `t_seminar_summer21` (
   `seminar_summer21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `office` varchar(1) NOT NULL COMMENT '主催オフィス（config値）',
@@ -123,15 +136,46 @@ CREATE TABLE `t_apply_webinar21004` (
   PRIMARY KEY (apply_webinar21004_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `t_analytics` (
-  `analytics_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `referer` varchar(64) DEFAULT NULL COMMENT 'リンク元',
-  `url` varchar(128) NOT NULL COMMENT '参照されたページURL',
-  `remote_addr` varchar(64) DEFAULT NULL COMMENT '$_SERVER[REMOTE_ADDR]',
-  `user_agent` varchar(256) DEFAULT NULL COMMENT '$_SERVER[HTTP_USER_AGENT]',
+CREATE TABLE `t_exhibition_winter21` (
+  `exhibition_winter21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `place_winter21` varchar(2) NOT NULL COMMENT '会場（config値）',
+  `event_date` date NOT NULL COMMENT '開催日',
+  `show_event_date` varchar(32) NOT NULL COMMENT '開催日（表示用）',
   `regist_time` datetime NOT NULL COMMENT '登録日',
   `update_time` datetime NOT NULL COMMENT '更新日',
   `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
 
-  PRIMARY KEY (analytics_id)
+  PRIMARY KEY (exhibition_winter21_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `t_exhibition_detail_winter21` (
+  `exhibition_detail_winter21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `exhibition_winter21_id` int(7) NOT NULL COMMENT 't_exhibition_winter21のID',
+  `serial_number` int(2) DEFAULT 1 COMMENT '時間順の連番',
+  `exhibition_time_start` time NOT NULL COMMENT '来場開始時間',
+  `exhibition_time_end` time NOT NULL COMMENT '来場終了時間',
+  `capacity` int(3) NOT NULL COMMENT '座席数',
+  `reserved` int(3) DEFAULT 0 COMMENT '予約数',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (exhibition_detail_winter21_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `t_apply_exhibition_winter21` (
+  `apply_exhibition_winter21_id` int(7) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `exhibition_detail_winter21_id` int(7) NOT NULL COMMENT 't_exhibition_detail_winter21のID',
+  `guest_num` int DEFAULT 0 COMMENT '参加人数',
+  `juku_name` varchar(128) NOT NULL COMMENT '塾名',
+  `zip` varchar(8) NOT NULL COMMENT '郵便番号',
+  `address` varchar(256) NOT NULL COMMENT '住所',
+  `tel` varchar(16) NOT NULL COMMENT '電話番号',
+  `email` varchar(256) DEFAULT NULL COMMENT 'メールアドレス',
+  `reception_slip_no` varchar(64) DEFAULT NULL COMMENT '受付票の表示文字列',
+  `regist_time` datetime NOT NULL COMMENT '登録日',
+  `update_time` datetime NOT NULL COMMENT '更新日',
+  `status` varchar(1) DEFAULT '0' COMMENT '状態 0:通常 9:削除済',
+
+  PRIMARY KEY (apply_exhibition_winter21_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

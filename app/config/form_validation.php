@@ -61,7 +61,7 @@ $config = array(
 
 		array(
 			'field' => 'time',
-			'label' => '夏期テキスト展示のご希望時間帯',
+			'label' => 'ご希望時間帯',
 			'rules' => 'required'
 		),
 

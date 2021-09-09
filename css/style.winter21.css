@@ -1,0 +1,677 @@
+/* #region 全体 */
+.wrapper {
+    padding-bottom: 180px !important;
+}
+
+.go-to-top {
+    color: #0055A6;
+    font-size: 4.5rem;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.for-checkbox {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+.for-checkbox::before {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.for-checkbox::after {
+    border-right: 4px solid #0055A6;
+    border-bottom: 3px solid #0055A6;
+    content: '';
+    display: block;
+    height: 20px;
+    top: 21px;
+    left: 9px;
+    margin-top: -16px;
+    opacity: 0;
+    position: absolute;
+    transform: rotate(45deg) translate3d(0, 2px, 0) scale3d(0.7, 0.7, 1.0);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 9px;
+}
+
+input[type="checkbox"]:checked + .for-checkbox::before {
+    border-color: #666666;
+}
+
+input[type="checkbox"]:checked + .for-checkbox::after {
+    opacity: 1.0;
+    transform: rotate(45deg) scale3d(1.0, 1.0, 1.0);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.for-radio {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    width: auto;
+}
+
+.for-radio::before {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.for-radio::after {
+    background: #0055A6;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 8px;
+    margin-top: -4px;
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    transform: scale3d(0.3, 0.3, 1.0);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    width: 10px;
+}
+
+input[type="radio"]:checked + .for-radio::before {
+    border-color: #666666;
+}
+
+input[type="radio"]:checked + .for-radio::after {
+    opacity: 1;
+    transform: scale3d(1.0, 1.0, 1.0);
+}
+
+@media screen and (max-width : 768px) {
+    .go-to-top {
+        font-size: 3.5rem;
+        right: 30px;
+        bottom: 20px;
+    }
+
+    .wrapper {
+        padding-bottom: 260px !important;
+    }
+
+    .for-radio::after {
+        top: 15px;
+    }
+}
+/* #endregion 全体 */
+
+/* #region 各ページ共通 */
+h1.title {
+    width: 100%;
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #0055A6;
+    border-bottom: 1px solid #0055A6;
+
+}
+
+.btn-winter21 {
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-enabled {
+    background-color: #EA3322;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.btn-enabled:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.btn-disabled {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: not-allowed !important;
+}
+
+.btn-back {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.btn-back:hover {
+    opacity: 0.8;
+}
+
+.apply-attention {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #EA3322;
+}
+/* #endregion 各ページ共通 */
+
+/* #region ヘッダー */
+header {
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 20px 0;
+    position: relative;
+    background-color: #046AAD;
+}
+/* #endregion ヘッダー */
+
+/* #region フッター */
+footer {
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 25px 0 0;
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    display: inline-block;
+}
+
+footer img.logo {
+    max-width: 260px;
+}
+
+footer dl.office {
+    margin: 10px 20px;
+}
+
+footer dl.office dd span {
+    font-size: 1.0rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+footer .copyright {
+    text-align: center;
+    background-color: #FFF24A;
+    color: #0055A6;
+    margin: 10px 0 0;
+    padding: 5px 0;
+}
+
+@media screen and (max-width : 768px) {
+    footer img.logo {
+        max-width: 160px;
+    }
+}
+/* #endregion フッター */
+
+/*　#region TOPページ */
+.text-list {
+    padding: 15px;
+    background-color: #D6E5F3;
+}
+
+.how-to-apply {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.how-to-apply .step-box {
+    margin: 0 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+.how-to-apply .step-box img {
+    display: block;
+    margin: 0 15px 0 0;
+    width: 164px;
+}
+
+.how-to-apply .down-arrow {
+    position: relative;
+}
+
+.how-to-apply .down-arrow::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 30px solid #EA3322;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 0 solid transparent;
+}
+
+.venue-name {
+    background-color: #FFF24A;
+    color: #0055A6;
+    font-weight: bold;
+    font-size: 1.9rem;
+    display: inline-block;
+    padding: 1px 5px;
+    margin-top: 10px;
+}
+
+.venue-box .date {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .name {
+    font-size: 2.0rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 0;
+}
+
+.venue-box .room {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2.0rem;
+    margin: 0 0 10px;
+}
+
+.venue-box .address {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+}
+
+iframe {
+    width: 100%;
+}
+
+h2.attempt {
+    color: #046AAD;
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    text-align: center;
+    border-bottom: 1px solid #046AAD;
+}
+
+.attempt-box {
+    display: table;
+    margin: 20px auto;
+}
+
+.attempt-box .box-row {
+    display: table-row;
+}
+
+.attempt-box .box-row .box-cell {
+    display: table-cell;
+    padding: 0 30px;
+    text-align: center;
+}
+
+
+@media screen and (max-width : 768px) {
+    .how-to-apply .step-box img {
+        width: 82px;
+    }
+
+    .how-to-apply .down-arrow::after {
+        bottom: 5px;
+        border-top: 20px solid #EA3322;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        border-bottom: 0 solid transparent;
+    }
+}
+/*　#endregion TOPページ */
+
+/* #region 申込フォーム */
+ul.breadcrumb-list {
+    overflow: hidden;
+    margin: 30px auto 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul.breadcrumb-list li {
+    margin: 0 10px;
+    background-color: #DBEFFF;
+    padding: 13px 0;
+    color: #0055A6;
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+ul.breadcrumb-list li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.7em;
+    border-width: 1.7em 0 1.7em 1em;
+    border-style: solid;
+    border-color: #DBEFFF #DBEFFF #DBEFFF transparent;
+    left: -1em;
+}
+
+ul.breadcrumb-list li:first-child {
+    border-radius: 3px 0 0 3px;
+    margin-left: 0;
+}
+
+ul.breadcrumb-list li:first-child::before {
+    border: none;
+}
+
+ul.breadcrumb-list li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.7em;
+    border-top: 1.7em solid transparent;
+    border-bottom: 1.7em solid transparent;
+    border-left: 1em solid #DBEFFF;
+    right: -1em;
+}
+
+ul.breadcrumb-list li:last-child {
+    border-radius: 0 3px 3px 0;
+    margin-right: 0;
+}
+
+ul.breadcrumb-list li:last-child::after {
+    border: none;
+}
+
+ul.breadcrumb-list .current {
+    font-weight: bold;
+    background-color: #0055A6;
+    color: #FFFFFF;
+}
+
+ul.breadcrumb-list .current::after {
+    border-left-color: #0055A6;
+}
+
+ul.breadcrumb-list .current::before {
+    border-color: #0055A6 #0055A6 #0055A6 transparent;
+}
+
+.form-box {
+    border: 2px solid #FFF24A;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 6px;
+}
+
+.form-box .item-title {
+    padding: 0 0 0 1.2rem;
+    margin: 0;
+    color: #0055A6;
+    font-weight: bold;
+    position: relative;
+}
+
+.form-box .item-title::before {
+    content: "";
+    display: block;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-color: #0055A6;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.form-box .full-capacity {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 5px;
+    font-size: 2.0rem;
+    text-decoration: line-through;
+}
+
+.form-box .full-capacity-info {
+    text-decoration: none;
+    color: #EA3322;
+}
+
+.form-box .note-limit {
+    margin: 20px 5em;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.form-box .place-label {
+    font-size: 2.0rem;
+}
+
+.form-box .seminar-detail {
+    margin: 20px 0;
+}
+
+.form-box .seminar-detail p.place {
+    background-color: #FFF24A;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 8px;
+    margin: 0 0 5px;
+}
+
+.form-box .seminar-detail h2 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+.form-box .seminar-detail dl.schedule {
+    margin: 0 0 0 1.5rem;
+    padding: 0;
+}
+
+.form-box .seminar-detail dl.schedule::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.form-box .seminar-detail dl.schedule dt {
+    float: left;
+    width: 60px;
+    font-weight: normal;
+    color: #0055A6;
+    background-color: #FFF24A;
+    text-align: center;
+    line-height: 2.0rem;
+    margin-top: 4px;
+}
+
+.form-box .seminar-detail dl.schedule dd {
+    padding-left: 70px;
+}
+
+.form-box dl.item-box {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.form-box dl.item-box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.form-box dl.item-box dt {
+    float: left;
+    width: 160px;
+}
+
+.form-box dl.item-box dd {
+    padding-left: 160px;
+    margin-bottom: 20px;
+}
+
+.form-box dl.item-box dd:last-child {
+    margin-bottom: 0;
+}
+
+h2.complete-comment {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2.complete-comment span {
+    color: #EA3322;
+}
+
+.reception-slip-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.reception-slip-info .image-wrapper {
+    max-width: 165px;
+}
+
+.anchor-to-back {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.anchor-to-back a {
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
+
+.arrow-triangle-right {
+    display: block;
+    position: relative;
+    width: 60px;
+}
+
+.arrow-triangle-right::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 30px solid #EA3322;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width : 768px) {
+    .form-box .full-capacity {
+        font-size: 1.4rem;
+    }
+
+    .form-box .note-limit {
+        margin: 10px 0;
+        padding: 0;
+        text-indent: 0;
+    }
+
+    .form-box .place-label {
+        font-size: 1.4rem;
+    }
+
+    .form-box .seminar-detail h2 {
+        font-size: 2.0rem;
+    }
+
+    ul.breadcrumb-list li {
+        font-size: 1.2rem;
+    }
+
+    ul.breadcrumb-list li::before {
+        margin-top: -2.0em;
+        border-width: 2.0em 0 2.0em 1em;
+    }
+
+    ul.breadcrumb-list li::after {
+        margin-top: -2.0em;
+        border-top: 2.0em solid transparent;
+        border-bottom: 2.0em solid transparent;
+    }
+
+    .form-box dl.item-box dt {
+        float: none;
+        width: auto;
+    }
+
+    .form-box dl.item-box dd {
+        padding-left: 0;
+    }
+
+    h2.complete-comment {
+        font-size: 1.7rem;
+    }
+
+    .arrow-triangle-right {
+        width: 50px;
+    }
+
+    .arrow-triangle-right::after {
+        border-top: 13px solid transparent;
+        border-right: 0 solid transparent;
+        border-bottom: 13px solid transparent;
+        border-left: 15px solid #EA3322;
+    }
+}
+/* #endregion 申込フォーム */
