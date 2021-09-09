@@ -3,12 +3,14 @@
 class Analytics extends MY_Controller
 {
 	private $ip_chushikoku;
+	private $from_date;
 
 	public function __construct()
 	{
 		parent::__construct();
 
 		$this->ip_chushikoku = '210.136.39.236';
+		$this->from_date = '2021-09-01 00:00:00';
 
 		// モデルロード
 		$this->load->model('m_analytics');
@@ -23,14 +25,13 @@ class Analytics extends MY_Controller
 		}
 
 		$view_data = array(
-			'TOP_C'		=> $this->m_analytics->get_count(array('url' => 'summer21/chushikoku', 'remote_addr !=' => $this->ip_chushikoku)),
-			'TOP_Q'		=> $this->m_analytics->get_count(array('url' => 'summer21/kyushu', 'remote_addr !=' => $this->ip_chushikoku)),
-			'APPLY_C'	=> $this->m_analytics->get_count(array('url' => 'summer21/apply_exhibition/chushikoku', 'remote_addr !=' => $this->ip_chushikoku)),
-			'APPLY_Q'	=> $this->m_analytics->get_count(array('url' => 'summer21/apply_seminar/kyushu', 'remote_addr !=' => $this->ip_chushikoku)),
-			'COM'		=> $this->m_analytics->get_count(array('referer' => 'com', 'remote_addr !=' => $this->ip_chushikoku)),
-			'COJP'		=> $this->m_analytics->get_count(array('referer' => 'cojp', 'remote_addr !=' => $this->ip_chushikoku)),
-			'SHOP'		=> $this->m_analytics->get_count(array('referer' => 'netshop', 'remote_addr !=' => $this->ip_chushikoku)),
-			'DIRECT'	=> $this->m_analytics->get_direct_count()
+			'TOP'		=> $this->m_analytics->get_count(array('url' => 'winter21', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'APPLY'		=> $this->m_analytics->get_count(array('url' => 'winter21/apply', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'COM'		=> $this->m_analytics->get_count(array('referer' => 'com', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'COJP'		=> $this->m_analytics->get_count(array('referer' => 'cojp', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'SHOP'		=> $this->m_analytics->get_count(array('referer' => 'netshop', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'DM'		=> $this->m_analytics->get_count(array('referer' => 'dm', 'remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date)),
+			'DIRECT'	=> $this->m_analytics->get_direct_count($this->from_date)
 		);
 
 		$this->load->view('admin/analytics/index', $view_data);
@@ -44,7 +45,7 @@ class Analytics extends MY_Controller
 			return;
 		}
 
-		$analytics_data = $this->m_analytics->get_list(array('remote_addr !=' => $this->ip_chushikoku), 'regist_time ASC');
+		$analytics_data = $this->m_analytics->get_list(array('remote_addr !=' => $this->ip_chushikoku, 'regist_time >=' => $this->from_date), 'regist_time ASC');
 
 		// タイムアウトさせない
 		set_time_limit(0);
@@ -70,7 +71,7 @@ class Analytics extends MY_Controller
 
 			foreach( $analytics_data as $val ) {
 				$csv_array = array(
-					str_replace('summer21/', '', $val['url']),
+					str_replace('winter21/', '', $val['url']),
 					$val['referer'],
 					$val['remote_addr'],
 					$val['user_agent'],

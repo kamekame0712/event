@@ -49,8 +49,8 @@ class MY_Controller extends CI_Controller
 
 		$now = date('Y-m-d H:i:s');
 		$insert_data = array(
-			'referer'	=> $referer,
-			'url'		=> uri_string(),
+			'referer'		=> $referer,
+			'url'			=> uri_string(),
 			'remote_addr'	=> $this->input->server('REMOTE_ADDR'),
 			'user_agent'	=> $this->input->server('HTTP_USER_AGENT'),
 			'regist_time'	=> $now,

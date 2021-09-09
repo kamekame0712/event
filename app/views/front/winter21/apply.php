@@ -275,7 +275,7 @@
 			<?php echo form_close(); ?>
 
 			<div class="anchor-to-back">
-				<a href="<?= site_url('winter21') ?>">トップに戻る</a>
+				<a href="<?= site_url('winter21?referer=apply_w21') ?>">トップに戻る</a>
 			</div>
 		</div> <!-- end of container -->
 

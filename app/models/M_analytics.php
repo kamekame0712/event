@@ -10,15 +10,17 @@ class M_analytics extends MY_Model
 		parent::__construct();
 	}
 
-	public function get_direct_count()
+	public function get_direct_count($from = '')
 	{
+		if( $from == '' ) {
+			$from = date('Y-m-d H:i:s');
+		}
+
 		$sql = '
 			SELECT COUNT(*) AS CNT FROM t_analytics
 			WHERE referer IS NULL
-			AND (
-				url = "summer21/chushikoku"
-		  		OR url = "summer21/kyushu"
-			)
+			AND url = "winter21"
+			AND regist_time >= "' . $from . '"
 		';
 
 		$query = $this->db->query($sql);
