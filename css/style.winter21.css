@@ -201,6 +201,11 @@ header {
     position: relative;
     background-color: #046AAD;
 }
+
+.form-top-pc {
+    width: 80%;
+    margin: 0 auto;
+}
 /* #endregion ヘッダー */
 
 /* #region フッター */
